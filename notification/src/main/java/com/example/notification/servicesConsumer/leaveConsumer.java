@@ -1,6 +1,5 @@
 package com.example.notification.servicesConsumer;
 
-import com.example.Erp.commonApi.event.TacheEvent.TacheTestedEvent;
 import com.example.notification.entities.Notifications;
 import com.example.notification.repositories.NotificationRepository;
 import com.oga.leave.events.LeaveCreatedEvent;

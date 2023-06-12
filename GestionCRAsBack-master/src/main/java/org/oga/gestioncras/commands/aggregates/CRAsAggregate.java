@@ -6,12 +6,10 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
-import org.oga.gestioncras.commands.commonapi.CreateCRAsCommand;
-import org.oga.gestioncras.commands.commonapi.UpdateCRAsCommand;
+import org.oga.gestioncras.commands.commonapi.*;
 import org.oga.gestioncras.enums.CRAsStatus;
-import org.oga.gestioncras.events.CRAsCreatedEvent;
+import org.oga.gestioncras.events.*;
 import lombok.extern.slf4j.Slf4j;
-import org.oga.gestioncras.events.CRAsUpdatedEvent;
 import org.oga.gestioncras.queries.entities.CRAs;
 import org.oga.gestioncras.queries.repositories.CRAsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +63,7 @@ public CRAsAggregate() {
                         createCRAsCommand.getIdCollaborator(),
                         createCRAsCommand.getComment(),
                         createCRAsCommand.getProductivity(),
-                        createCRAsCommand.getApprove(),
+
                         CRAsStatus.CREATED));
 
     }
@@ -82,7 +80,6 @@ public CRAsAggregate() {
             this.idResponsible= event.getIdResponsible();
             this.comment= event.getComment();
             this.productivity=event.getProductivity();
-            this.approve=event.getApprove();
             this.status=event.getStatus();
         }
         @CommandHandler
@@ -104,7 +101,7 @@ public CRAsAggregate() {
                 command.getIdCollaborator(),
                 command.getComment(),
                 command.getProductivity(),
-                command.getApprove(),
+
                 CRAsStatus.UPDATED
         ));
         }
@@ -120,9 +117,79 @@ public CRAsAggregate() {
         this.idCollaborator= event.getIdCollaborator();
         this.comment= event.getComment();
         this.productivity=event.getProductivity();
-        this.approve=event.getApprove();
+
         this.status=event.getStatus();
+    }
+    @CommandHandler
+    public void deleteCRAs(DeleteCRAsCommand command) {
+        AggregateLifecycle.apply(new CRAsDeletedEvent(command.getId()));
+    }
+    @EventSourcingHandler
+    public void on(CRAsDeletedEvent event) {
+        AggregateLifecycle.markDeleted();
     }
 
 
+    @CommandHandler
+    public void on(ConfirmedCRAsCommand command){
+        AggregateLifecycle.apply(new CRAsUpdatedEvent(
+                command.getId(),
+                command.getTimeSpent(),
+                command.getDescription(),
+                command.getStartDate(),
+                command.getEndDate(),
+                command.getIdProject(),
+                command.getIdResponsible(),
+                command.getIdCollaborator(),
+                command.getComment(),
+                command.getProductivity(),
+                CRAsStatus.CONFIRMED
+        ));
+    }
+    @EventSourcingHandler
+    public void on(CRAsConfirmedEvent event){
+        this.crasId= event.getId();
+        this.timeSpent= event.getTimeSpent();
+        this.description= event.getDescription();
+        this.startDate=event.getStartDate();
+        this.endDate=event.getEndDate();
+        this.idProject= event.getIdProject();
+        this.idResponsible=event.getIdResponsible();
+        this.idCollaborator= event.getIdCollaborator();
+        this.comment= event.getComment();
+        this.productivity=event.getProductivity();
+        this.status=event.getStatus();
+    }
+    @CommandHandler
+    public void on(RejectedCRAsCommand command){
+        AggregateLifecycle.apply(new CRAsUpdatedEvent(
+                command.getId(),
+                command.getTimeSpent(),
+                command.getDescription(),
+                command.getStartDate(),
+                command.getEndDate(),
+                command.getIdProject(),
+                command.getIdResponsible(),
+                command.getIdCollaborator(),
+                command.getComment(),
+                command.getProductivity(),
+                CRAsStatus.REJECTED
+        ));
+    }
+    @EventSourcingHandler
+    public void on(CRAsRejectedEvent event){
+        this.crasId= event.getId();
+        this.timeSpent= event.getTimeSpent();
+        this.description= event.getDescription();
+        this.startDate=event.getStartDate();
+        this.endDate=event.getEndDate();
+        this.idProject= event.getIdProject();
+        this.idResponsible=event.getIdResponsible();
+        this.idCollaborator= event.getIdCollaborator();
+        this.comment= event.getComment();
+        this.productivity=event.getProductivity();
+        this.status=event.getStatus();
+    }
 }
+
+

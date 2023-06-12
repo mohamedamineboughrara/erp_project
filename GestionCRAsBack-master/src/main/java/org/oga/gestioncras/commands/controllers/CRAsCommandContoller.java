@@ -30,15 +30,28 @@ public class CRAsCommandContoller {
     public CompletableFuture<String> UpdateCRAs(@RequestBody CRAsRequestDTO request){
         return crAsCommandService.updateCRAs(request);
     }
+    @DeleteMapping(path = "/delete/{craId}")
+    public CompletableFuture<String> deleteCRAs(@PathVariable String craId) {
+        return crAsCommandService.deleteCRAs(craId);
+    }
+
     @GetMapping("/eventStore/{crasId}")
     public Stream eventStore(@PathVariable String crasId){
         return (Stream)eventStore.readEvents(crasId).asStream() ;
     }
 
+
+    @PutMapping(path = "/confirm")
+    public CompletableFuture<String> confirmCRAs(@RequestBody CRAsRequestDTO crAsRequestDTO) {
+        return crAsCommandService.confirmCRAs(crAsRequestDTO);
+    }
+    @PutMapping(path ="/rejected")
+    public CompletableFuture<String> rejectedCRAs(@RequestBody CRAsRequestDTO crAsRequestDTO) {
+        return crAsCommandService.rejectedCRAs(crAsRequestDTO);
+    }
     @ExceptionHandler(FalseDateException.class)
     public ResponseEntity<String> exceptionHandler(FalseDateException exception){
         return new ResponseEntity<String>(exception.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 
 }

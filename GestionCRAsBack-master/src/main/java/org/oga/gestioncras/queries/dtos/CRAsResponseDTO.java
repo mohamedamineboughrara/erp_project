@@ -21,6 +21,5 @@ public class CRAsResponseDTO {
     private String idCollaborator;
     private String comment;
     private double productivity;
-    private Boolean approve;
     private CRAsStatus status;
 }

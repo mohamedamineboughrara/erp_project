@@ -15,9 +15,9 @@ public class CreateCRAsCommand extends BaseCommand<String> {
     @Getter private String idCollaborator;
     @Getter private String comment;
     @Getter private double productivity;
-    @Getter private Boolean approve;
 
-    public CreateCRAsCommand(String id, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity, Boolean approve) {
+
+    public CreateCRAsCommand(String id, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity) {
         super(id);
         this.timeSpent = timeSpent;
         this.description = description;
@@ -28,6 +28,6 @@ public class CreateCRAsCommand extends BaseCommand<String> {
         this.idCollaborator = idCollaborator;
         this.comment = comment;
         this.productivity = productivity;
-        this.approve = approve;
+
     }
 }

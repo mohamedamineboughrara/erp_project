@@ -28,7 +28,6 @@ public class CRAs {
     private String idCollaborator;
     private String comment;
     private double productivity;
-    private Boolean approve;
     @Enumerated(EnumType.STRING)
     private CRAsStatus status;
 }

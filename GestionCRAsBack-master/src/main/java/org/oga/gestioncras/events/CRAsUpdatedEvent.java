@@ -15,10 +15,9 @@ public class CRAsUpdatedEvent extends BaseEvent<String>{
     @Getter   private String idCollaborator;
     @Getter   private String comment;
     @Getter   private double productivity;
-    @Getter private Boolean approve;
     @Getter   private CRAsStatus status;
 
-    public CRAsUpdatedEvent(String id, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity, Boolean approve, CRAsStatus status) {
+    public CRAsUpdatedEvent(String id, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity, CRAsStatus status) {
         super(id);
         this.timeSpent = timeSpent;
         this.description = description;
@@ -29,7 +28,6 @@ public class CRAsUpdatedEvent extends BaseEvent<String>{
         this.idCollaborator = idCollaborator;
         this.comment = comment;
         this.productivity = productivity;
-        this.approve = approve;
         this.status = status;
     }
 }

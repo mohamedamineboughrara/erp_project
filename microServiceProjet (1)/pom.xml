@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>microServiceProjet</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>microperviceprojet</artifactId>
+	<version>1.0.0</version>
 	<name>microServiceProjet</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -54,8 +54,14 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.0.1</version>
+
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.0.1-jre</version>
 		</dependency>
 
 		<dependency>

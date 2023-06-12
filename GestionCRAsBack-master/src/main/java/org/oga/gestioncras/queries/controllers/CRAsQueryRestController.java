@@ -2,6 +2,7 @@ package org.oga.gestioncras.queries.controllers;
 
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
+import org.oga.gestioncras.queries.dtos.GetAllCRAsByStatusQueryDTO;
 import org.oga.gestioncras.queries.dtos.GetAllCRAsQueryDTO;
 import org.oga.gestioncras.queries.dtos.GetCRAsQueryDTO;
 import org.oga.gestioncras.queries.entities.CRAs;
@@ -26,5 +27,9 @@ public class CRAsQueryRestController {
         List<CRAs> reponse=queryGateway.query(new GetAllCRAsQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
         return reponse;
     }
-
+    @GetMapping(path="/AllCRAsByStatus")
+    public List<CRAs> getAllByStatus(){
+        List<CRAs> reponse=queryGateway.query(new GetAllCRAsByStatusQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
+        return reponse;
+    }
 }

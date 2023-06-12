@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>notification</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>notification</name>
 	<description>notification</description>
 	<properties>
@@ -27,18 +27,24 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.0.1</version>
+
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.0.1-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>com.oga</groupId>
 			<artifactId>leave</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.example</groupId>
-			<artifactId>microServiceProjet</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>microperviceprojet</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 
@@ -91,13 +97,13 @@
 		</dependency>
 		<dependency>
 			<groupId>com.oga</groupId>
-			<artifactId>rendezVous</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>rendezvous</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.oga</groupId>
-			<artifactId>GestionCRAs</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>gestioncras</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 	</dependencies>

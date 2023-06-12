@@ -6,9 +6,12 @@ import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.oga.gestioncras.crasProducer.CrasProducer;
+import org.oga.gestioncras.events.CRAsConfirmedEvent;
 import org.oga.gestioncras.events.CRAsCreatedEvent;
+import org.oga.gestioncras.events.CRAsRejectedEvent;
 import org.oga.gestioncras.events.CRAsUpdatedEvent;
 import org.oga.gestioncras.mappers.CRAsMapper;
+import org.oga.gestioncras.queries.dtos.GetAllCRAsByStatusQueryDTO;
 import org.oga.gestioncras.queries.dtos.GetAllCRAsQueryDTO;
 import org.oga.gestioncras.queries.dtos.GetCRAsQueryDTO;
 import org.oga.gestioncras.queries.entities.CRAs;
@@ -45,7 +48,6 @@ public class CRAsQueryService {
         crAs.setIdResponsible(crAsCreatedEvent.getIdResponsible());
         crAs.setComment(crAsCreatedEvent.getComment());
         crAs.setProductivity(crAsCreatedEvent.getProductivity());
-        crAs.setApprove(crAsCreatedEvent.getApprove());
         crAs.setStatus(crAsCreatedEvent.getStatus());
         crAsRepository.save(crAs);
         crasProducer.sendMessage(crAsCreatedEvent);
@@ -64,10 +66,48 @@ public class CRAsQueryService {
           crAs.setIdCollaborator(event.getIdCollaborator());
           crAs.setComment(event.getComment());
           crAs.setProductivity(event.getProductivity());
-          crAs.setApprove(event.getApprove());
           crAs.setStatus(event.getStatus());
           crAsRepository.save(crAs);
     }
+    @EventHandler
+    public void on(CRAsConfirmedEvent event){
+        log.info("***");
+        log.info("CRAsUpdatedEventRecieved");
+        CRAs crAs = crAsRepository.findById(event.getId()).get();
+        crAs.setTimeSpent(event.getTimeSpent());
+        crAs.setDescription(event.getDescription());
+        crAs.setStartDate(event.getStartDate());
+        crAs.setEndDate(event.getEndDate());
+        crAs.setIdProject(event.getIdProject());
+        crAs.setIdResponsible(event.getIdResponsible());
+        crAs.setIdCollaborator(event.getIdCollaborator());
+        crAs.setComment(event.getComment());
+        crAs.setProductivity(event.getProductivity());
+        crAs.setStatus(event.getStatus());
+
+        crAsRepository.save(crAs);
+    }
+    @EventHandler
+    public void on(CRAsRejectedEvent event){
+        log.info("***");
+        log.info("CRAsUpdatedEventRecieved");
+        CRAs crAs = crAsRepository.findById(event.getId()).get();
+        crAs.setTimeSpent(event.getTimeSpent());
+        crAs.setDescription(event.getDescription());
+        crAs.setStartDate(event.getStartDate());
+        crAs.setEndDate(event.getEndDate());
+        crAs.setIdProject(event.getIdProject());
+        crAs.setIdResponsible(event.getIdResponsible());
+        crAs.setIdCollaborator(event.getIdCollaborator());
+        crAs.setComment(event.getComment());
+        crAs.setProductivity(event.getProductivity());
+        crAs.setStatus(event.getStatus());
+        crAsRepository.save(crAs);
+    }
+    public void deleteCRAs(String craId) {
+        crAsRepository.deleteById(craId);
+    }
+
     @QueryHandler
     public CRAs on (GetCRAsQueryDTO query) {
         return crAsRepository.findById(query.getId()).get();
@@ -76,5 +116,9 @@ public class CRAsQueryService {
     @QueryHandler
     public List<CRAs> on(GetAllCRAsQueryDTO getAllCRAsRequestDTO) {
         return crAsRepository.findAll();
+    }
+    @QueryHandler
+    public List<CRAs> getByStatus(GetAllCRAsByStatusQueryDTO getAllCRAsByStatusQueryDTO) {
+        return crAsRepository.findByStatus();
     }
 }

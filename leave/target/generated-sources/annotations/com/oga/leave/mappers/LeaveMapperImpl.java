@@ -2,14 +2,15 @@ package com.oga.leave.mappers;
 
 import com.oga.leave.queries.dtos.LeaveResponseDTO;
 import com.oga.leave.queries.entities.Leave;
-import javax.annotation.Generated;
 import org.springframework.stereotype.Component;
 
+/*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-05-18T13:37:32+0100",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.6 (Private Build)"
+    date = "2023-06-11T23:13:33+0100",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.7 (Private Build)"
 )
+*/
 @Component
 public class LeaveMapperImpl implements LeaveMapper {
 

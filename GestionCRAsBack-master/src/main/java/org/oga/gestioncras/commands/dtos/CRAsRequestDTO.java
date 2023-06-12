@@ -17,5 +17,5 @@ public class CRAsRequestDTO {
      private String idCollaborator;
      private String comment;
      private double productivity;
-     private Boolean approve;
+
 }

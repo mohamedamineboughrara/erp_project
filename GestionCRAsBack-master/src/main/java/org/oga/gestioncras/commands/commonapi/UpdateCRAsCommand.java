@@ -18,9 +18,9 @@ public class UpdateCRAsCommand {
     @Getter  private String idCollaborator;
     @Getter private String comment;
     @Getter private double productivity;
-    @Getter private Boolean approve;
 
-    public UpdateCRAsCommand(String crasId, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity, Boolean approve) {
+
+    public UpdateCRAsCommand(String crasId, String timeSpent, String description, LocalDate startDate, LocalDate endDate, String idProject, String idResponsible, String idCollaborator, String comment, double productivity) {
         this.crasId = crasId;
         this.timeSpent = timeSpent;
         this.description = description;
@@ -31,6 +31,6 @@ public class UpdateCRAsCommand {
         this.idCollaborator = idCollaborator;
         this.comment = comment;
         this.productivity = productivity;
-        this.approve = approve;
+
     }
 }

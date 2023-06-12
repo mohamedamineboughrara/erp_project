@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Notifications {
+public class Notifications{
     @Id
     private String id = UUID.randomUUID().toString();
     private String message;

@@ -1,5 +1,5 @@
 package org.oga.gestioncras.enums;
 
 public enum CRAsStatus {
-    CREATED,UPDATED
+    CREATED,UPDATED,CONFIRMED,REJECTED
 }

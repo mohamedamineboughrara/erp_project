@@ -2,8 +2,7 @@ package org.oga.gestioncras.commands.services;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
-import org.oga.gestioncras.commands.commonapi.CreateCRAsCommand;
-import org.oga.gestioncras.commands.commonapi.UpdateCRAsCommand;
+import org.oga.gestioncras.commands.commonapi.*;
 import org.oga.gestioncras.commands.dtos.CRAsRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,8 +35,7 @@ public class CRAsCommandServiceImpl implements CRAsCommandService {
                     crAsRequestDTO.getIdResponsible(),
                     crAsRequestDTO.getIdCollaborator(),
                     crAsRequestDTO.getComment(),
-                    crAsRequestDTO.getProductivity(),
-                    crAsRequestDTO.getApprove()));
+                    crAsRequestDTO.getProductivity()));
         }
 
 @Override
@@ -57,12 +55,49 @@ public class CRAsCommandServiceImpl implements CRAsCommandService {
             crAsRequestDTO.getIdCollaborator(),
             crAsRequestDTO.getIdResponsible(),
             crAsRequestDTO.getComment(),
-            crAsRequestDTO.getProductivity(),
-            crAsRequestDTO.getApprove()
+            crAsRequestDTO.getProductivity()
     ));
         return commandResponse.exceptionally(ex -> {
             throw new RuntimeException("Failed to update CRAs: " + ex.getMessage());
         });
 
     }
+    @Override
+    public CompletableFuture<String> deleteCRAs(String craId) {
+        return commandGateway.send(new DeleteCRAsCommand(craId));
+    }
+    @Override
+    public CompletableFuture<String> confirmCRAs(CRAsRequestDTO crAsRequestDTO) {
+
+        return commandGateway.send(new ConfirmedCRAsCommand(
+                crAsRequestDTO.getCrasId(),
+                crAsRequestDTO.getTimeSpent(),
+                crAsRequestDTO.getDescription(),
+                crAsRequestDTO.getStartDate(),
+                crAsRequestDTO.getEndDate(),
+                crAsRequestDTO.getIdProject(),
+                crAsRequestDTO.getIdCollaborator(),
+                crAsRequestDTO.getIdResponsible(),
+                crAsRequestDTO.getComment(),
+                crAsRequestDTO.getProductivity()
+        ));
+    }
+    @Override
+    public CompletableFuture<String> rejectedCRAs(CRAsRequestDTO crAsRequestDTO) {
+
+        return commandGateway.send(new RejectedCRAsCommand(
+                crAsRequestDTO.getCrasId(),
+                crAsRequestDTO.getTimeSpent(),
+                crAsRequestDTO.getDescription(),
+                crAsRequestDTO.getStartDate(),
+                crAsRequestDTO.getEndDate(),
+                crAsRequestDTO.getIdProject(),
+                crAsRequestDTO.getIdCollaborator(),
+                crAsRequestDTO.getIdResponsible(),
+                crAsRequestDTO.getComment(),
+                crAsRequestDTO.getProductivity()
+        ));
+    }
 }
+
+
