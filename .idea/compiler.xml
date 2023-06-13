@@ -16,7 +16,7 @@
         <module name="Material" />
         <module name="GestionCollaborator" />
       </profile>
-      <profile name="Annotation profile for GestionCRAs" enabled="true">
+      <profile name="Annotation profile for leave" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -25,8 +25,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
         </processorPath>
-        <module name="GestionDocumentsDemander" />
         <module name="leave" />
+        <module name="GestionDocumentsDemander" />
         <module name="GestionBdg" />
         <module name="GestionCRAs" />
         <module name="rendezVous" />
