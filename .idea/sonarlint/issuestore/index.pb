@@ -135,16 +135,8 @@ MMaterial/src/main/java/com/example/Material/query/service/GetAllMaterial.java,
 UMaterial/src/main/java/com/example/Material/query/service/MaterialServiceHandler.java,4/c/4c3fe47d68bdac5546dc8adc19bb664f502794f0
 Š
 ZMaterial/src/main/java/com/example/Material/query/repositories/ListOfAssignedMaterial.java,4/b/4bb7c70e33673d9b527036150adaaff1efcc3e97
-Œ
-\microServiceProjet (1)/src/test/java/com/example/Erp/MicroServiceProjetApplicationTests.java,2/d/2d2ad3b14074be3076935f85c4633db96145dcfa
-}
-MmicroServiceProjet (1)/src/test/java/com/example/Erp/ModuleAggregateTest.java,8/3/83271e1df6c07f8a14a87c94d7fcc5e821ad3788
-~
-NmicroServiceProjet (1)/src/test/java/com/example/Erp/ProjectAggregateTest.java,b/c/bca6015d8c0414a64ac4e0019b345a5c859d6d7d
 —
 gmicroServiceProjet (1)/src/main/java/com/example/Erp/Commands/controllers/ProjectCommandController.java,d/0/d0c97ad7c08c279846fc08dd56610cd653297114
-Œ
-\GestionCollaborator/src/main/java/org/oga/gestioncollaborator/repository/UserRepository.java,6/c/6c160ce8f8aec3278df327dfcaa2b8944ae91ca8
 ”
 dGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/commonapi/RejectedCRAsCommand.java,6/9/698c246f9f58dfa53c76ad404a52d9058720cb8a
 ’
@@ -207,20 +199,6 @@ VGestionBdg/src/main/java/com/example/gestionbdg/queries/entities/GestionBdjEnti
 PGestionBdg/src/main/java/com/example/gestionbdg/queries/dtos/GetCJMQueryDTO.java,4/7/47fcf13cfcb9a0f633e49cb4c88db8e4b50e8e48
 ƒ
 SGestionCRAsBack-master/src/main/java/org/oga/gestioncras/queries/entities/CRAs.java,3/1/3117d689a03ccf9bc81dcb549b3daf3389991524
-–
-fGestionCollaborator/src/test/java/org/oga/gestioncollaborator/GestionCollaboratorApplicationTests.java,b/6/b60cc980bff306ddf693d11b42a7466118427a5b
-Š
-ZGestionCollaborator/src/main/java/org/oga/gestioncollaborator/service/KeyCloakService.java,0/a/0a12545f22ac648fceaab4d55073d6d677a5f400
-”
-dGestionCollaborator/src/main/java/org/oga/gestioncollaborator/controller/OrganizationController.java,9/b/9b56750336d6aefb51162c55f81a9f74d4e1822e
-Œ
-\GestionCollaborator/src/main/java/org/oga/gestioncollaborator/controller/UserController.java,6/b/6bcb23b3886e11f9192ec4cb86474b3e5a1bfc5c
-‰
-YGestionCollaborator/src/main/java/org/oga/gestioncollaborator/config/KeycklockConfig.java,9/8/980ef28acea95b103c1b1591b636a86fad71c620
-L
-GestionCollaborator/mvnw.cmd,c/d/cddb87f10b6f0e1924d87893332c6e294418056a
-†
-VGestionCollaborator/src/main/java/org/oga/gestioncollaborator/service/UserService.java,2/5/255a5fe72f18874eafbf72fca378d3fd4a16bc23
 ~
 NFicheDePaie-main/src/main/java/com/example/gfichpaie/queries/entities/FDP.java,6/2/62969e7d6cd1dd219c50bb4f860d951427043b4f
 ‡
@@ -237,8 +215,6 @@ v
 FrendezVous/src/main/java/com/oga/rendezvous/RendezVousApplication.java,d/0/d03cf1a75d31c532343c95440ed24a7a7de8df9a
 n
 >server/src/main/java/com/example/server/ServerApplication.java,d/3/d311f0676b77d973b9ba37338abb908c8a239576
-‘
-aGestionCollaborator/src/main/java/org/oga/gestioncollaborator/GestionCollaboratorApplication.java,1/1/11292116a6322698553f168891513fc14a76fcac
 „
 TGestionCRAsBack-master/src/main/java/org/oga/gestioncras/GestionCrAsApplication.java,9/f/9fa4b0eea285ba52359eaab33c5916e36afefb0b
 g
@@ -261,10 +237,6 @@ E
 GestionBdg/Dockerfile,5/c/5c46e52ab587005a03f56f804ce3a8c1d480d2a1
 B
 GestionBdg/pom.xml,9/9/99204ea38cd9e767ea79991a8465b2a2b89a8697
-K
-GestionCollaborator/pom.xml,8/d/8d6f2c0ce586cb3bae8d6a1787d3added938fb49
-N
-GestionCollaborator/Dockerfile,7/e/7e936af7f720daad0b9cda9c5744e147753464ce
 P
  GestionDocumentsDemander/pom.xml,7/a/7ab0b2d54d47a03a89cc0d241a6d1e0485f5179b
 S
