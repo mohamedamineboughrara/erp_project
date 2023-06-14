@@ -13,7 +13,9 @@ pipeline {
 
         stage('MVN CLEAN') {
             steps {
-                sh 'mvn clean'
+                dir('microserviceproject (1)') {
+                    sh 'mvn clean'
+                }
             }
         }
 
