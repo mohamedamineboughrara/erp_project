@@ -14,7 +14,6 @@
         <module name="signinPhaseTwo" />
         <module name="Aoi-gateway" />
         <module name="Material" />
-        <module name="GestionCollaborator" />
       </profile>
       <profile name="Annotation profile for leave" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
