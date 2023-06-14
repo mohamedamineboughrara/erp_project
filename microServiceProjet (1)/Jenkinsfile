@@ -61,12 +61,11 @@ pipeline {
                                   sh 'docker login -u mohamedamineboughrara -p azerty123'
                                              }  }
                 stage('Docker push') {
-                 dir('microServiceProjet (1)') {
 
                                 steps {
                                     sh 'echo "Docker is pushing to ...."'
                                 	sh 'docker push mohamedamineboughrara/micrpserviceprojet'
-                                             }  }}
+                                             }  }
 
 
 
