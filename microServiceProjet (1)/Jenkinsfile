@@ -2,14 +2,14 @@ pipeline {
     agent any
     stages {
         stage('Checkout GIT') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: 'main']],
-                    userRemoteConfigs: [[url: 'https://github.com/mohamedamineboughrara/erp_project']]
-                ])
-            }
-        }
+              steps {
+                  checkout([
+                       $class: 'GitSCM',
+                        branches: [[name: 'main']],
+                        userRemoteConfigs: [[url: 'https://github.com/mohamedamineboughrara/erp_project', credentialsId: '04d2b06c-1242-4e29-bec6-34e40f5735ec']]
+                         ])
+                       }
+                   }
 
         stage('MVN CLEAN') {
             steps {
