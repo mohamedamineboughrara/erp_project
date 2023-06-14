@@ -21,19 +21,25 @@ pipeline {
 
         stage('MVN COMPILE') {
             steps {
+               dir('microServiceProjet (1)') {
                 sh 'mvn compile'
+                }
             }
         }
 
         stage('MVN PACKAGE') {
             steps {
+               dir('microServiceProjet (1)') {
                 sh 'mvn package'
+                }
             }
         }
 
         stage('MVN TEST') {
             steps {
+             dir('microServiceProjet (1)') {
                 sh 'mvn test'
+                }
             }
         }
 
@@ -41,10 +47,12 @@ pipeline {
 
         	 stage('Build docker image'){
                       steps{
+                         dir('microServiceProjet (1)') {
                               script{
                                   sh 'docker build -t mohamedamineboughrara/micrpserviceprojet .'
                                                   }
                                                 }
+                                            }
                                             }
                 stage('Docker login') {
 
@@ -53,11 +61,12 @@ pipeline {
                                   sh 'docker login -u mohamedamineboughrara -p azerty123'
                                              }  }
                 stage('Docker push') {
+                 dir('microServiceProjet (1)') {
 
                                 steps {
                                     sh 'echo "Docker is pushing to ...."'
                                 	sh 'docker push mohamedamineboughrara/micrpserviceprojet'
-                                             }  }
+                                             }  }}
 
 
 
