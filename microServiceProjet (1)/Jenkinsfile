@@ -6,7 +6,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: 'main']],
-                    userRemoteConfigs: [[url: 'https://github.com/onegateafrica-org/ERP-backend.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/mohamedamineboughrara/erp_project']]
                 ])
             }
         }
