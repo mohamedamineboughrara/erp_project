@@ -17,6 +17,9 @@ pipeline {
                     sh 'mvn clean compile package'
                     sh 'docker build -t mohamedamineboughrara/leave .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                    sh 'mvn org.owasp:dependency-check-maven:check'
+                    archiveArtifacts(artifacts: 'leave/target/dependency-check-report.html', fingerprint: true)
+
                 }
             }
         }
@@ -27,6 +30,8 @@ pipeline {
                     sh 'mvn clean compile package'
                     sh 'docker build -t mohamedamineboughrara/micrpserviceprojet .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                    sh 'mvn org.owasp:dependency-check-maven:check'
+
                 }
             }
         }
