@@ -25,7 +25,7 @@ pipeline {
                             }
                         }
 
-        stage('Build Leave Project') {
+        stage('Build Leave Project micorservice') {
             steps {
                 dir('leave') {
                     sh 'mvn clean compile package'
