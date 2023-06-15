@@ -18,6 +18,8 @@ pipeline {
                                     sh 'docker build -t mohamedamineboughrara/gestionbdg-1.0.0.jar .'
                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
                                     sh 'mvn org.owasp:dependency-check-maven:check'
+                                    archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
+
 
                                 }
                             }
