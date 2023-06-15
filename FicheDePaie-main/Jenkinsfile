@@ -1,0 +1,73 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout GIT') {
+              steps {
+                  checkout([
+                       $class: 'GitSCM',
+                        branches: [[name: 'main']],
+                        userRemoteConfigs: [[url: 'https://github.com/mohamedamineboughrara/erp_project', credentialsId: '04d2b06c-1242-4e29-bec6-34e40f5735ec']]
+                         ])
+                       }
+                   }
+
+        stage('MVN CLEAN') {
+            steps {
+                dir(FicheDePaie-main) {
+                    sh 'mvn clean'
+                }
+            }
+        }
+
+        stage('MVN COMPILE') {
+            steps {
+               dir(FicheDePaie-main) {
+                sh 'mvn compile'
+                }
+            }
+        }
+
+        stage('MVN PACKAGE') {
+            steps {
+               dir(FicheDePaie-main) {
+                sh 'mvn package'
+                }
+            }
+        }
+
+        stage('MVN TEST') {
+            steps {
+             dir(FicheDePaie-main) {
+                sh 'mvn test'
+                }
+            }
+        }
+
+
+
+        	 stage('Build docker image'){
+                      steps{
+                         dir(FicheDePaie-main) {
+                              script{
+                                  sh 'docker build -t mohamedamineboughrara/gfichpaie-1.0.0.jar .'
+                                                  }
+                                                }
+                                            }
+                                            }
+                stage('Docker login') {
+
+                                steps {
+                                  sh 'echo "login Docker ...."'gfichpaie-1.0.0.jar
+                                  sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                             }  }
+                stage('Docker push') {
+
+                                steps {
+                                    sh 'echo "Docker is pushing to ...."'
+                                	sh 'docker push mohamedamineboughrara/gfichpaie-1.0.0.jar'
+                                             }  }
+
+
+
+      }
+    }

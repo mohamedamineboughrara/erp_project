@@ -11,15 +11,12 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
-class GfichPaieApplicationTests {
 
+@SpringBootTest
+public class FicheDePaieTest {
     private String FICHEID = UUID.randomUUID().toString();
     private String USERNAME = "User 1";
     private Date DATE = new Date();
@@ -39,6 +36,7 @@ class GfichPaieApplicationTests {
                 .when(new CreateFichedePaieCommand(FICHEID, USERNAME,DATE,SALAIREBRUT,IMPOTS,COLLABORATORS,SALAIRENET,CHARGESOCIAL,PRIME,TJM))
                 .expectSuccessfulHandlerExecution()
                 .expectEvents(new FicheDePaieCreatedEvent(FICHEID, USERNAME,DATE,SALAIREBRUT,IMPOTS,COLLABORATORS,SALAIRENET,CHARGESOCIAL,PRIME,TJM, FicheDePaieStatus.CREATED));
+
     }
 
 }

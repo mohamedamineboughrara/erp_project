@@ -2,10 +2,11 @@ package com.example.gfichpaie.events;
 
 import com.example.gfichpaie.enums.FicheDePaieStatus;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-
+@NoArgsConstructor
 public class FicheDePaieCreatedEvent extends BaseEvent <String> {
     @Getter private String userName;
     @Getter private Date date;

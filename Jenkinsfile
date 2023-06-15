@@ -15,6 +15,7 @@ pipeline {
             steps {
                 dir('leave') {
                     sh 'mvn clean compile package'
+                    sh 'mvn test'
                     sh 'docker build -t mohamedamineboughrara/leave .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
                     sh 'mvn org.owasp:dependency-check-maven:check'
@@ -28,6 +29,7 @@ pipeline {
             steps {
                 dir('microServiceProjet (1)') {
                     sh 'mvn clean compile package'
+                    sh 'mvn test'
                     sh 'docker build -t mohamedamineboughrara/micrpserviceprojet .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
                     sh 'mvn org.owasp:dependency-check-maven:check'

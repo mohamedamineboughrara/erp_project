@@ -3,11 +3,12 @@ package com.example.gestionbdg.events;
 
 import com.example.gestionbdg.enums.GbdgStatus;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NoArgsConstructor
 public class CjmCreatedEvent extends BaseEvent <String> {
     @Getter
     private String collaborator;

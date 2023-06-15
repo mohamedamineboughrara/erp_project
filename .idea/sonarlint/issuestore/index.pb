@@ -175,8 +175,6 @@ _GestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/aggregates/CR
 aGestionCRAsBack-master/src/main/java/org/oga/gestioncras/queries/repositories/CRAsRepository.java,6/a/6a09e9ced9e8e2c5561199296f3dcf4e4634e87e
 —
 gGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/controllers/CRAsCommandContoller.java,1/f/1fc6dcfcfd011b2ac039debe8ebd3e5f71f8805a
-€
-PFicheDePaie-main/src/main/java/com/example/gfichpaie/aggregates/FicheDePaie.java,2/a/2a9ea5a6b201e54fd813b55347864e0619fe3c75
 ”
 dFicheDePaie-main/src/main/java/com/example/gfichpaie/queries/controllers/FDPQueryRestController.java,9/4/947ed446ac9e0bbaca40a2e015d6ff9d043838ef
 t
@@ -229,14 +227,6 @@ F
 Aoi-gateway/Dockerfile,5/3/5353c45b8898f50803d86316f1e38315152f22f2
 ~
 NFicheDePaie-main/src/main/java/com/example/gfichpaie/GfichPaieApplication.java,d/0/d0fa710dc1ab25135fd5e24369d7d9ac350510f9
-H
-FicheDePaie-main/pom.xml,c/8/c8abe89860d0830509ca2d1e3d727dd3d87fdf23
-K
-FicheDePaie-main/Dockerfile,0/a/0a25d713fdf57954b477ddba26577286eda9390e
-E
-GestionBdg/Dockerfile,5/c/5c46e52ab587005a03f56f804ce3a8c1d480d2a1
-B
-GestionBdg/pom.xml,9/9/99204ea38cd9e767ea79991a8465b2a2b89a8697
 P
  GestionDocumentsDemander/pom.xml,7/a/7ab0b2d54d47a03a89cc0d241a6d1e0485f5179b
 S
@@ -259,5 +249,3 @@ A
 server/Dockerfile,7/6/7616e2c202d821cf272f76f16fc84f194a512f67
 F
 Aoi-gateway/.gitignore,b/c/bc97132634ea97398f29de8f9414ebac6af3b9c2
-S
-#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0

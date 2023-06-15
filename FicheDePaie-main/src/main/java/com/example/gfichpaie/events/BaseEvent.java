@@ -1,11 +1,13 @@
 package com.example.gfichpaie.events;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class BaseEvent <T> {
 @Getter private T id;
 
-    public BaseEvent(T id) {
-        this.id = id;
-    }
+
 }
