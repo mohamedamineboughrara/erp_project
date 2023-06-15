@@ -4,6 +4,7 @@ import com.example.gfichpaie.aggregates.FicheDePaie;
 import com.example.gfichpaie.commonapi.CreateFichedePaieCommand;
 import com.example.gfichpaie.enums.FicheDePaieStatus;
 import com.example.gfichpaie.events.FicheDePaieCreatedEvent;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.test.aggregate.AggregateTestFixture;
 import org.axonframework.test.aggregate.FixtureConfiguration;
 import org.junit.Test;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
 
 @SpringBootTest
+@Slf4j
 public class FicheDePaieTest {
     private String FICHEID = UUID.randomUUID().toString();
     private String USERNAME = "User 1";
@@ -36,6 +38,7 @@ public class FicheDePaieTest {
                 .when(new CreateFichedePaieCommand(FICHEID, USERNAME,DATE,SALAIREBRUT,IMPOTS,COLLABORATORS,SALAIRENET,CHARGESOCIAL,PRIME,TJM))
                 .expectSuccessfulHandlerExecution()
                 .expectEvents(new FicheDePaieCreatedEvent(FICHEID, USERNAME,DATE,SALAIREBRUT,IMPOTS,COLLABORATORS,SALAIRENET,CHARGESOCIAL,PRIME,TJM, FicheDePaieStatus.CREATED));
+
 
     }
 

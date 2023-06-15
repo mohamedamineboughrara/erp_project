@@ -15,7 +15,7 @@ import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
 
 @SpringBootTest
-public class GestionBdgTestAgregate {
+public class GestionBdgAgregateTest {
 
 
     private String BDGID = UUID.randomUUID().toString();

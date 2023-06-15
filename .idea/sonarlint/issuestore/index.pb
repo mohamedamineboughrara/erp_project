@@ -17,8 +17,6 @@ CrendezVous/src/main/java/com/oga/rendezvous/config/KafkaConfig.java,3/6/364dcb
 arendezVous/src/main/java/com/oga/rendezvous/queries/KafkaProducer/CreateAppointementProducer.java,8/f/8f9975403908f179ad7acfac20034c7ccb418c64
 Ç
 Rleave/src/main/java/com/oga/leave/queries/kafkaProducer/ApprooveLeaveProducer.java,6/4/6416cb5dbd5001f361b20442ef4936a530040192
-~
-NGestionCRAsBack-master/src/main/java/org/oga/gestioncras/events/BaseEvent.java,e/f/eff37511231f546ca97e8cd3bcefc61b3a254c73
 ?
 rendezVous/mvnw,9/0/9047bc4cdfcf2f35ec67d1712926e9ae48fd5ec2
 C
@@ -133,8 +131,6 @@ bGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/commonapi/Del
 NGestionCRAsBack-master/src/main/java/org/oga/gestioncras/enums/CRAsStatus.java,8/2/822cc609856d98b5a46e5b9dd80cc43a1f10859c
 ï
 eGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/commonapi/ConfirmedCRAsCommand.java,3/8/3827e7f869642a51e3cfe509e7733fd59dcdb568
-ä
-ZGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/dtos/CRAsRequestDTO.java,a/2/a2a2021a39b5b6c4108a1aa82f7afc8685cf7d27
 í
 bGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/commonapi/UpdateCRAsCommand.java,d/9/d936404cc021a20e761fa8b7d29e4d20c70e1a9e
 í
@@ -153,8 +149,6 @@ VGestionCRAsBack-master/src/main/java/org/oga/gestioncras/events/CRAsRejectedEve
 UGestionCRAsBack-master/src/main/java/org/oga/gestioncras/events/CRAsStartedEvent.java,7/2/726cc14426c5a229dc2b50ed74a9519fd8822998
 Ö
 UGestionCRAsBack-master/src/main/java/org/oga/gestioncras/events/CRAsUpdatedEvent.java,2/a/2a58710e3c916f856531c0bee01e4d3c1cee5c7e
-Ö
-UGestionCRAsBack-master/src/main/java/org/oga/gestioncras/events/CRAsCreatedEvent.java,7/2/72250f52aecf26500d148cf148eaa598b10f7e96
 è
 _GestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/aggregates/CRAsAggregate.java,1/a/1a467fcfacc1d2920a35ab7ca49046b7418bf37a
 ç
@@ -217,8 +211,6 @@ D
 interview/Dockerfile,b/4/b4456024acc46ff560cb1f91b0abd6e42fa12d83
 Q
 !KeycloackPahseTwo-main/Dockerfile,8/1/81a906b7075c6c0d0a18bd896568d2e9f44701f3
-Q
-!GestionCRAsBack-master/Dockerfile,a/0/a0ccf6fdbedf60734d4a044abacb00074dd17027
 Ü
 Vnotification/src/main/java/com/example/notification/servicesConsumer/CrasConsumer.java,a/e/aeb8ec105af0dbb9d295ede5442446662bcf789d
 è
