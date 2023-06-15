@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="server" />
         <module name="notification" />
-        <module name="microServiceProjet" />
         <module name="test" />
         <module name="signinPhaseTwo" />
         <module name="Aoi-gateway" />
@@ -33,6 +32,11 @@
         <module name="GfichPaie" />
         <module name="interview" />
       </profile>
+      <profile name="Annotation profile for microServiceProjet" enabled="true">
+        <sourceOutputDir name="../microServiceProjet/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../microServiceProjet/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Aoi-gateway" target="17" />
@@ -45,6 +49,7 @@
       <module name="interview" target="1.8" />
       <module name="leave" target="1.8" />
       <module name="Material" target="17" />
+      <module name="microperviceprojet" target="17" />
       <module name="microServiceProjet" target="17" />
       <module name="notification" target="17" />
       <module name="rendezVous" target="1.8" />
@@ -66,6 +71,7 @@
       <module name="interview" options="-parameters" />
       <module name="leave" options="-parameters" />
       <module name="microServiceProjet" options="-parameters" />
+      <module name="microperviceprojet" options="-parameters" />
       <module name="notification" options="-parameters" />
       <module name="rendezVous" options="-parameters" />
       <module name="server" options="-parameters" />

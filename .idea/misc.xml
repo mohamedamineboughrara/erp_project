@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/test/test/pom.xml" />
         <option value="$PROJECT_DIR$/interview/pom.xml" />
+        <option value="$PROJECT_DIR$/microServiceProjet/pom.xml" />
       </list>
     </option>
   </component>
