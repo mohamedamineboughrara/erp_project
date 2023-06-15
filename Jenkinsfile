@@ -12,7 +12,7 @@ pipeline {
         }
            stage('Build GestionBdg microservice') {
                             steps {
-                                dir(GestionBdg) {
+                                dir('GestionBdg') {
                                     sh 'mvn clean compile package'
                                     sh 'mvn test'
                                     sh 'docker build -t mohamedamineboughrara/gestionbdg-1.0.0.jar .'
