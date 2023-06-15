@@ -77,10 +77,6 @@ KrendezVous/src/test/java/com/oga/rendezvous/RendezVousApplicationTests.java,6/
 [rendezVous/src/main/java/com/oga/rendezvous/commands/commands/UpdateAppointmentCommand.java,b/0/b0c14ce42de19f540e1f94ffda34bc62dd172f1a
 ä
 ZrendezVous/src/main/java/com/oga/rendezvous/commands/dtos/UpdateAppointmentRequestDTO.java,f/6/f63d94e0dd958d2743b293ad8f40f300642325fb
-†
-pmicroServiceProjet (1)/src/main/java/com/example/Erp/commonApi/commands/ProjectCommand/UpdateProjectCommand.java,2/3/236868995e9cd7ad8ea6df2924d4bb81392321ff
-é
-^microServiceProjet (1)/src/main/java/com/example/Erp/commonApi/ProducerKafka/TaskProducer.java,a/5/a506ba8227b8e8c373fff15c3ab518923a8b79ea
 h
 8leave/src/main/java/com/oga/leave/enums/LeaveStatus.java,0/c/0c2195861099c7ff25b73fc327087961d8c722dd
 z
@@ -115,16 +111,10 @@ SMaterial/src/main/java/com/example/Material/commanApi/commands/MaterialCommand.
 XMaterial/src/main/java/com/example/Material/commanApi/dtos/AssingMAterialRequestDto.java,e/2/e2e520f481dd5f09cde8e014454ce5311dddda23
 Ü
 VMaterial/src/main/java/com/example/Material/commanApi/event/MaterialAssingedEvent.java,6/a/6ac99a953ca7b2274f6ccb650668c340c62de735
-í
-bmicroServiceProjet (1)/src/main/java/com/example/Erp/commonApi/queries/ProjectQueries/GetById.java,b/2/b2eedc0e31b2cf3cb6093101127cf12642b8b900
-é
-^microServiceProjet (1)/src/main/java/com/example/Erp/query/service/ProjectServiceHanbdler.java,6/9/691828d7b13f9525ab5bd5ac8da038ef473d4293
 ä
 ZMaterial/src/main/java/com/example/Material/query/Controllers/MaterialQueryController.java,f/5/f58c5e15d9aaff497c0c273e80801bde0acbc88e
 Ä
 PMaterial/src/main/java/com/example/Material/query/entities/AssignedMaterial.java,4/2/42d3797cb83372d61dad94285c949d9d9becdb2e
-é
-^microServiceProjet (1)/src/main/java/com/example/Erp/query/repositories/ProjectRepository.java,6/4/64cc5538c21023013a1dbeeb9891e382ab3c7e83
 í
 bMaterial/src/main/java/com/example/Material/query/Controllers/MaterialAssignedQueryController.java,6/c/6c65f35a207637bbdd87d4f161ebe36ffd486651
 Ü
@@ -135,8 +125,6 @@ MMaterial/src/main/java/com/example/Material/query/service/GetAllMaterial.java,
 UMaterial/src/main/java/com/example/Material/query/service/MaterialServiceHandler.java,4/c/4c3fe47d68bdac5546dc8adc19bb664f502794f0
 ä
 ZMaterial/src/main/java/com/example/Material/query/repositories/ListOfAssignedMaterial.java,4/b/4bb7c70e33673d9b527036150adaaff1efcc3e97
-ó
-gmicroServiceProjet (1)/src/main/java/com/example/Erp/Commands/controllers/ProjectCommandController.java,d/0/d0c97ad7c08c279846fc08dd56610cd653297114
 î
 dGestionCRAsBack-master/src/main/java/org/oga/gestioncras/commands/commonapi/RejectedCRAsCommand.java,6/9/698c246f9f58dfa53c76ad404a52d9058720cb8a
 í
@@ -181,16 +169,10 @@ t
 DMaterial/src/main/java/com/example/Material/Util/StorageService.java,0/5/059a8c53f26acc88e250d00ae6634a6e3231c555
 ï
 eGestionDocumentsDemander/src/main/java/com/example/gestiondocumentsdemander/utils/StorageService.java,3/1/311a4b090ecd4ca3c825998f7e9cf7cc930691a4
-Ä
-PmicroServiceProjet (1)/src/main/java/com/example/Erp/query/entities/Project.java,b/e/be1208c0b5c51a6e10c9bc93e2ecbdd8f9b63a0b
 å
 \KeycloackPahseTwo-main/src/main/java/com/example/signinphasetwo/service/KeyCloakService.java,4/a/4a6b2e73865881b70824a7e17ed9e3c56a906241
 Ö
 UKeycloackPahseTwo-main/src/main/java/com/example/signinphasetwo/Entity/OrgEntity.java,e/3/e3952feb634f62c944d287b453f970b47ed9941e
-~
-NmicroServiceProjet (1)/src/main/java/com/example/Erp/config/Configuration.java,a/b/ab5e8dcb2f4735d43249b42804602c7e9a6c42bc
-|
-LmicroServiceProjet (1)/src/main/java/com/example/Erp/config/KafkaConfig.java,b/7/b7e622f19609efc95e9c6c5aec01af3cbbabd821
 Ü
 VGestionBdg/src/main/java/com/example/gestionbdg/queries/entities/GestionBdjEntity.java,6/4/6431bbf50e0f13235dc527a2b1e69142056ce5b1
 Ä
@@ -201,8 +183,6 @@ SGestionCRAsBack-master/src/main/java/org/oga/gestioncras/queries/entities/CRAs.
 NFicheDePaie-main/src/main/java/com/example/gfichpaie/queries/entities/FDP.java,6/2/62969e7d6cd1dd219c50bb4f860d951427043b4f
 á
 WGestionCRAsBack-master/src/main/java/org/oga/gestioncras/crasProducer/CrasProducer.java,3/2/328419245ecadeb029d5fe26219726a252d98568
-ê
-`microServiceProjet (1)/src/main/java/com/example/Erp/query/Controller/TacheQuerryController.java,e/d/edc61bd2ccbd4e3a6cd27030df9469feaf5cde10
 z
 JGestionBdg/src/main/java/com/example/gestionbdg/GestionBdgApplication.java,4/f/4fa82833b0b9f931fcfb6c05f01048a82ac0ab08
 s
