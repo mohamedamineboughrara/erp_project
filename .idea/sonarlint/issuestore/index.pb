@@ -197,8 +197,6 @@ tGestionDocumentsDemander/src/main/java/com/example/gestiondocumentsdemander/Ges
 ^KeycloackPahseTwo-main/src/main/java/com/example/signinphasetwo/SigninPhaseTwoApplication.java,c/6/c60fccf3cba4cc8d2a47e6b4673ac530d0febdef
 C
 Aoi-gateway/pom.xml,c/1/c101e9fc5d751a5a802e28fbaa18f65ab775711e
-F
-Aoi-gateway/Dockerfile,5/3/5353c45b8898f50803d86316f1e38315152f22f2
 ~
 NFicheDePaie-main/src/main/java/com/example/gfichpaie/GfichPaieApplication.java,d/0/d0fa710dc1ab25135fd5e24369d7d9ac350510f9
 P

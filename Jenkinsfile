@@ -10,6 +10,20 @@ pipeline {
                 ])
             }
         }
+         stage('Build Api-gateway') {
+                                            steps {
+                                                dir('Aoi-gateway') {
+                                                    sh 'mvn clean compile package'
+                                                    sh 'mvn sonar:sonar   -Dsonar.projectKey=Api-gateway -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ed2e81b29f1b3f6ff5320459e72ab510fb107c1a '
+                                                    sh 'docker build -t mohamedamineboughrara/aoi-gateway-1.0.0.jar .'
+                                                    sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                    sh 'mvn org.owasp:dependency-check-maven:check'
+                                                    archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
+
+
+                                                }
+                                            }
+                                        }
         stage('Build GestionCRAs microservice') {
                                     steps {
                                         dir('GestionCRAsBack-master') {
