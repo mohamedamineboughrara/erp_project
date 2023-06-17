@@ -24,6 +24,20 @@ pipeline {
                                                 }
                                             }
                                         }
+                                          stage('Build GestionDocumentsDemander  microservice') {
+                                                                            steps {
+                                                                                dir('GestionDocumentsDemander') {
+                                                                                    sh 'mvn clean compile package'
+                                                                                    sh 'mvn test'
+                                                                                    sh 'docker build -t mohamedamineboughrara/gestiondocumentsdemander-1.0.0.jar .'
+                                                                                    sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                                                    sh 'mvn org.owasp:dependency-check-maven:check'
+                                                                                    archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
+
+
+                                                                                }
+                                                                            }
+                                                                        }
         stage('Build GestionCRAs microservice') {
                                     steps {
                                         dir('GestionCRAsBack-master') {
