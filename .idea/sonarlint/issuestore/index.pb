@@ -87,8 +87,6 @@ g
 7leave/src/main/java/com/oga/leave/events/BaseEvent.java,8/2/82c7a468b90f9bf4e0bc43d4b2aa04141f83aa3e
 ‡
 Wnotification/src/main/java/com/example/notification/servicesConsumer/leaveConsumer.java,d/5/d54ca8509e90ccc45c72681979e42ec6e41ac3df
-‚
-RMaterial/src/main/java/com/example/Material/commanApi/dtos/MaterialRequsetDTO.java,2/1/21d6213a2d3acc5a46a4190040ff627248c7ed6b
 x
 HMaterial/src/main/java/com/example/Material/query/entities/Material.java,b/e/be0a3f3e23a67aadca464946ce3f325ea1c9000f
 …

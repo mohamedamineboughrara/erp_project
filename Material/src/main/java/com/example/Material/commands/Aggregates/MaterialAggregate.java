@@ -1,10 +1,8 @@
 package com.example.Material.commands.Aggregates;
 
-import com.example.Material.commanApi.commands.AssignMaterialCommand;
 import com.example.Material.commanApi.commands.DeletMaterialCommand;
 import com.example.Material.commanApi.commands.MaterialCommand;
 import com.example.Material.commanApi.enums.materialStatus;
-import com.example.Material.commanApi.event.MaterialAssingedEvent;
 import com.example.Material.commanApi.event.MaterialCreatedEvent;
 import com.example.Material.commanApi.event.MaterialDeletedEvent;
 import lombok.extern.slf4j.Slf4j;
@@ -16,16 +14,16 @@ import org.axonframework.spring.stereotype.Aggregate;
 
 @Aggregate
 @Slf4j
-public class materialAggregate {
+public class MaterialAggregate {
     @AggregateIdentifier
     private String materialId;
     private String materialName;
     private int quantity;
     private materialStatus status;
-    public materialAggregate() {
+    public MaterialAggregate() {
     }
     @CommandHandler
-    public materialAggregate(MaterialCommand command){
+    public MaterialAggregate(MaterialCommand command){
         AggregateLifecycle.apply((new MaterialCreatedEvent(
                 command.getMaterialId(),
                 command.getMaterialName(),

@@ -24,6 +24,20 @@ pipeline {
                                                 }
                                             }
                                         }
+                                        stage('Build Material  microservice') {
+                                              steps {
+                                                 dir('Material') {
+                                                    sh 'mvn clean compile package'
+                                                    sh 'mvn test'
+                                                    sh 'docker build -t mohamedamineboughrara/material-1.0.0.jar .'
+                                                    sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                    sh 'mvn org.owasp:dependency-check-maven:check'
+                                                    archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
+
+
+                                                                                       }
+                                                                                      }
+                                                                                      }
                                           stage('Build GestionDocumentsDemander  microservice') {
                                                                                     steps {
                                                                                         dir('GestionDocumentsDemander') {
