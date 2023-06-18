@@ -24,7 +24,7 @@ pipeline {
                                                 }
                                             }
                                         }
-                                         stage('Build Appointment  microservice') {
+                                         stage('Build  Appointment   microservice') {
                                                                                       steps {
                                                                                          dir('rendezVous') {
                                                                                             sh 'mvn clean compile package'
