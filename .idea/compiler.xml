@@ -16,7 +16,7 @@
         <module name="microperviceprojet" />
         <module name="GestionCollaborator" />
       </profile>
-      <profile name="Annotation profile for GestionCRAs" enabled="true">
+      <profile name="Annotation profile for interview" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

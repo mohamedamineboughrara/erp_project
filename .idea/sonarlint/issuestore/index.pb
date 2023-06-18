@@ -197,10 +197,6 @@ C
 Aoi-gateway/pom.xml,c/1/c101e9fc5d751a5a802e28fbaa18f65ab775711e
 ~
 NFicheDePaie-main/src/main/java/com/example/gfichpaie/GfichPaieApplication.java,d/0/d0fa710dc1ab25135fd5e24369d7d9ac350510f9
-A
-interview/pom.xml,4/d/4d3e7bdebeb294863f08b275a11c227961a8cab2
-D
-interview/Dockerfile,b/4/b4456024acc46ff560cb1f91b0abd6e42fa12d83
 Q
 !KeycloackPahseTwo-main/Dockerfile,8/1/81a906b7075c6c0d0a18bd896568d2e9f44701f3
 †

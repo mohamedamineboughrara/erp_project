@@ -25,11 +25,25 @@ pipeline {
                                             }
                                         }
                                           stage('Build GestionDocumentsDemander  microservice') {
+                                                                                    steps {
+                                                                                        dir('GestionDocumentsDemander') {
+                                                                                        sh 'mvn clean compile package'
+                                                                                        sh 'mvn test'
+                                                                                        sh 'docker build -t mohamedamineboughrara/gestiondocumentsdemander-1.0.0.jar .'
+                                                                                        sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                                                        sh 'mvn org.owasp:dependency-check-maven:check'
+                                                                                        archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
+
+
+                                                                                                            }
+                                                                                                           }
+                                                                                                           }
+                                          stage('Build interview  microservice') {
                                                                             steps {
-                                                                                dir('GestionDocumentsDemander') {
+                                                                                dir('interview') {
                                                                                     sh 'mvn clean compile package'
                                                                                     sh 'mvn test'
-                                                                                    sh 'docker build -t mohamedamineboughrara/gestiondocumentsdemander-1.0.0.jar .'
+                                                                                    sh 'docker build -t mohamedamineboughrara/interview-1.0.0.jar .'
                                                                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
                                                                                     sh 'mvn org.owasp:dependency-check-maven:check'
                                                                                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
