@@ -91,8 +91,6 @@ XMaterial/src/main/java/com/example/Material/query/Controllers/UploadControllorI
 YMaterial/src/main/java/com/example/Material/commanApi/commands/AssignMaterialCommand.java,1/5/15a53a99c1a47f82bc4e2a3d7f35f795faa3e1be
 …
 UMaterial/src/main/java/com/example/Material/commands/Aggregates/AssignedAggregat.java,1/8/18820cd3db98e1ba84caab5212d289e54199af2c
-†
-VMaterial/src/main/java/com/example/Material/commands/Aggregates/materialAggregate.java,1/3/13474274aa69ffce444beea6cda8ce8294fa3167
 Ž
 ^Material/src/main/java/com/example/Material/commands/Controller/MaterialCommandController.java,1/9/1919a8785b9c7c4d70a89e72a81333acf7f6d115
 ƒ
