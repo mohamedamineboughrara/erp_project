@@ -37,8 +37,6 @@ QrendezVous/src/main/java/com/oga/rendezvous/events/AppointmentConfirmedEvent.ja
 OrendezVous/src/main/java/com/oga/rendezvous/events/AppointmentCreatedEvent.java,d/d/dd8c2c8df0c55f622bed220255ca6cf0caa83812
 ã
 [rendezVous/src/main/java/com/oga/rendezvous/queries/repositories/AppointmentRepository.java,9/4/942c20292e9b64d798b9eee12450fc9d85826169
-Ñ
-TrendezVous/src/main/java/com/oga/rendezvous/commands/dtos/AppointmentRequestDTO.java,4/d/4d3850800c9147ef0aba9724f529571f753f8e2f
 x
 HrendezVous/src/main/java/com/oga/rendezvous/enums/AppointmentStatus.java,0/3/03d03c08c6df47bad1bccaf4e6f2e7fbdd9d9f4a
 
@@ -57,8 +55,6 @@ ZrendezVous/src/main/java/com/oga/rendezvous/commands/dtos/CancelAppointmentRequ
 [rendezVous/src/main/java/com/oga/rendezvous/commands/dtos/ConfirmAppointmentRequestDTO.java,9/1/91724af1765e800a8975fd4a604204a9d52dc9c6
 ã
 [rendezVous/src/main/java/com/oga/rendezvous/commands/commands/CreateAppointmentCommand.java,f/c/fcec563631344970de8fd53c281acaafa66d3761
-ä
-ZrendezVous/src/main/java/com/oga/rendezvous/commands/dtos/CreateAppointmentRequestDTO.java,d/4/d42ab227880e79f31a05b66f91d13fd6ab7288fc
 Ü
 VrendezVous/src/main/java/com/oga/rendezvous/queries/services/EventSourcingService.java,d/e/de30d60b3899f2e6638bf9cbbd3676cdfb88e9b4
 á
@@ -69,8 +65,6 @@ ZrendezVous/src/main/java/com/oga/rendezvous/queries/dtos/GetAllAppointmentsRequ
 XrendezVous/src/main/java/com/oga/rendezvous/queries/controllers/GetAppointmentQuery.java,1/c/1cac2b7f92e6e89fdc6da0d4949772565c70b405
 Ñ
 TrendezVous/src/main/java/com/oga/rendezvous/queries/dtos/GetAppointmentQueryDTO.java,9/4/94d7c3e7370e08e812ab42f68dd237c8646fbc5e
-{
-KrendezVous/src/test/java/com/oga/rendezvous/RendezVousApplicationTests.java,6/f/6fcc5035d7ebb461f8807dd62ae8f81f2d67237b
 ã
 [rendezVous/src/main/java/com/oga/rendezvous/commands/commands/UpdateAppointmentCommand.java,b/0/b0c14ce42de19f540e1f94ffda34bc62dd172f1a
 ä
@@ -201,8 +195,6 @@ Q
 Vnotification/src/main/java/com/example/notification/servicesConsumer/CrasConsumer.java,a/e/aeb8ec105af0dbb9d295ede5442446662bcf789d
 è
 _notification/src/main/java/com/example/notification/servicesConsumer/leaveRejectedConsumer.java,7/5/7512052b15cd7286b8970bb454b15023488dfc5a
-E
-rendezVous/Dockerfile,1/0/1066569422edf10e79ebc7b50fc1008deaf64cee
 A
 server/Dockerfile,7/6/7616e2c202d821cf272f76f16fc84f194a512f67
 F
