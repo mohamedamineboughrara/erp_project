@@ -1,6 +1,5 @@
 package com.oga.interview.commands.dtos;
 
-import com.oga.interview.enums.InterviewStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -3,10 +3,10 @@ package com.example.gfichpaie.aggregates;
 
 import com.example.gfichpaie.commonapi.CreateFichedePaieCommand;
 import com.example.gfichpaie.commonapi.UpdateFicheDePaieCommand;
-import com.example.gfichpaie.dtos.FicheDePaieRequestDTO;
 import com.example.gfichpaie.enums.FicheDePaieStatus;
 import com.example.gfichpaie.events.FicheDePaieCreatedEvent;
 import com.example.gfichpaie.events.FicheDePaieUpdatedEvent;
+import com.example.gfichpaie.exceptions.NullInputException;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -15,7 +15,6 @@ import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 
 
-import java.time.LocalDate;
 import java.util.Date;
 
 @Aggregate
@@ -43,7 +42,7 @@ public class FicheDePaie {
     @CommandHandler
     public FicheDePaie(CreateFichedePaieCommand createFichedePaieCommand) {
         if((createFichedePaieCommand.getSalaireNet()==null) || (createFichedePaieCommand.getChargeSociale()==null) || (createFichedePaieCommand.getPrime()==null || (createFichedePaieCommand.getSalaireBrut()==null) || (createFichedePaieCommand.getDate()==null)|| (createFichedePaieCommand.getImpots()==null)|| (createFichedePaieCommand.getUserName()==null))  ){
-            throw new RuntimeException("Input should not be null");
+            throw new NullInputException("Input should not be null");
         }
         log.info("CreateFDPCommand Reveived");
 
@@ -83,9 +82,9 @@ public class FicheDePaie {
             this.status=event.getStatus();
         }
         @CommandHandler
-        public void FicheDePaieAggregate(UpdateFicheDePaieCommand command){
+        public void ficheDePaieAggregate(UpdateFicheDePaieCommand command){
             if((command.getIdCollaborator()==null) || (command.getSalaireNet()==null) || (command.getChargeSociale()==null) || (command.getPrime()==null || (command.getSalaireBrut()==null) || (command.getDate()==null)|| (command.getImpots()==null)|| (command.getUserName()==null))  ){
-                throw new RuntimeException("Input should not be null");
+                throw new NullInputException("Input should not be null");
             }
         AggregateLifecycle.apply(new FicheDePaieUpdatedEvent(
                 command.getFicheId(),

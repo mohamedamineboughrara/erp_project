@@ -2,7 +2,6 @@ package org.oga.gestioncras.commands.commonapi;
 
 import lombok.Getter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
-import org.oga.gestioncras.queries.entities.CRAs;
 
 import java.time.LocalDate;
 

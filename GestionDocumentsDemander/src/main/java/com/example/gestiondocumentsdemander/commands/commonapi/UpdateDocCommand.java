@@ -3,7 +3,6 @@ package com.example.gestiondocumentsdemander.commands.commonapi;
 import lombok.Getter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-import java.io.File;
 import java.time.LocalDate;
 
 public class UpdateDocCommand {

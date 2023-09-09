@@ -27,7 +27,7 @@ public class DocCommandContoller {
         return docCommandService.createDoc(docRequestDTO);
     }
     @PutMapping(path = "/update")
-    public CompletableFuture<String> UpdateDoc(@RequestBody DocRequestDTO docRequestDTO){
+    public CompletableFuture<String> updateDoc(@RequestBody DocRequestDTO docRequestDTO){
         return docCommandService.updateDoc(docRequestDTO);
     }
     @PutMapping(path = "/upload")

@@ -27,7 +27,7 @@ public class InterviewQueryRestController {
     }
     @GetMapping()
     public List<Interview> interviewList(){
-        List<Interview> response = queryGateway.query((new GetInterviewQuery()), ResponseTypes.multipleInstancesOf(Interview.class)).join();
-        return response;
+        return queryGateway.query((new GetInterviewQuery()), ResponseTypes.multipleInstancesOf(Interview.class)).join();
+
     }
 }

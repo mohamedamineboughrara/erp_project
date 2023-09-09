@@ -11,10 +11,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.time.LocalDate;
-import java.util.Arrays;
+
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

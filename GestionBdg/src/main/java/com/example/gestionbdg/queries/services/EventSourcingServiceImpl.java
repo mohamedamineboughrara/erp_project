@@ -12,8 +12,8 @@ public class EventSourcingServiceImpl implements EventSourcingService {
         this.eventStore = eventStore;
     }
     @Override
-    public DomainEventStream eventsByGbdgId(String GBdjId){
-        DomainEventStream domainEventStream=eventStore.readEvents(GBdjId);
-        return domainEventStream;
+    public DomainEventStream eventsByGbdgId(String bdgId){
+
+        return eventStore.readEvents(bdgId);
     }
 }

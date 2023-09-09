@@ -14,6 +14,7 @@ import org.axonframework.queryhandling.QueryHandler;
 import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -23,32 +24,21 @@ public class GBDJQueryService {
     private final GestionBdjMapper gestionBdjMapper;
     private final QueryUpdateEmitter queryUpdateEmitter;
     @EventHandler
-    public void on(CjmCreatedEvent cjmCreatedEvent){
-        log.info("FDPCreatedEventRecieved");
-        GestionBdjEntity gestionBdjEntity=new GestionBdjEntity();
-        gestionBdjEntity.setBdgId(cjmCreatedEvent.getId());
-        gestionBdjEntity.setCollaborator(cjmCreatedEvent.getCollaborator());
-        gestionBdjEntity.setTjm(cjmCreatedEvent.getTjm());
-        gestionBdjEntity.setCjm(cjmCreatedEvent.getCjm());
-        gestionBdjEntity.setTask(cjmCreatedEvent.getTask());
-        gestionBdjEntity.setDayNumber(cjmCreatedEvent.getDayNumber());
-        gestionBdjEntity.setProject(cjmCreatedEvent.getProject());
-        gestionBdjEntity.setStatus(cjmCreatedEvent.getStatus());
-        gestionBdjRepository.save(gestionBdjEntity);
+    public void on(CjmUpdatedEvent event) {
+        log.info("CjmUpdatedEventReceived");
+        Optional<GestionBdjEntity> optionalGestionBdjEntity = gestionBdjRepository.findById(event.getId());
+        optionalGestionBdjEntity.ifPresent(gestionBdjEntity -> {
+            gestionBdjEntity.setCollaborator(event.getCollaborator());
+            gestionBdjEntity.setTjm(event.getTjm());
+            gestionBdjEntity.setCjm(event.getCjm());
+            gestionBdjEntity.setTask(event.getTask());
+            gestionBdjEntity.setDayNumber(event.getDayNumber());
+            gestionBdjEntity.setProject(event.getProject());
+            gestionBdjEntity.setStatus(event.getStatus());
+            gestionBdjRepository.save(gestionBdjEntity);
+        });
     }
-    @EventHandler
-    public void on(CjmUpdatedEvent event){
-        log.info("FDPUpdatedEventRecieved");
-        GestionBdjEntity gestionBdjEntity=gestionBdjRepository.findById(event.getId()).get();
-        gestionBdjEntity.setCollaborator(event.getCollaborator());
-        gestionBdjEntity.setTjm(event.getTjm());
-        gestionBdjEntity.setCjm(event.getCjm());
-        gestionBdjEntity.setTask(event.getTask());
-        gestionBdjEntity.setDayNumber(event.getDayNumber());
-        gestionBdjEntity.setProject(event.getProject());
-        gestionBdjEntity.setStatus(event.getStatus());
-        gestionBdjRepository.save(gestionBdjEntity);
-    }
+
 
     @QueryHandler
     public GestionBdjEntity on (GetCJMQueryDTO query) {

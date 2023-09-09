@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path="/query")
 public class GestionBdgQueryRestController {
-    private QueryGateway queryGateway;
+    private final QueryGateway queryGateway;
 
     public GestionBdgQueryRestController(QueryGateway queryGateway) {
         this.queryGateway = queryGateway;
@@ -31,8 +31,8 @@ public class GestionBdgQueryRestController {
 
     @GetMapping(path="/AllCjm")
     public List<GestionBdjEntity> getAll(){
-        List<GestionBdjEntity> reponse=queryGateway.query(new GetAllCJMQueryDTO(), ResponseTypes.multipleInstancesOf(GestionBdjEntity.class)).join();
-        return reponse;
+
+        return queryGateway.query(new GetAllCJMQueryDTO(), ResponseTypes.multipleInstancesOf(GestionBdjEntity.class)).join();
     }
 
 }

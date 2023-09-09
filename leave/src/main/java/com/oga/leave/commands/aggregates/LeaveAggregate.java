@@ -3,6 +3,7 @@ package com.oga.leave.commands.aggregates;
 import com.oga.leave.commands.commands.*;
 import com.oga.leave.enums.LeaveStatus;
 import com.oga.leave.events.*;
+import com.oga.leave.exceptions.NullInputException;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -68,7 +69,7 @@ public class LeaveAggregate {
     @CommandHandler
     public void handle (UpdateLeaveCommand updateLeaveCommand) {
         if ((updateLeaveCommand.getCollaboraterId() == null) || (updateLeaveCommand.getHumanResourcesManagerId() == null)) {
-            throw new RuntimeException("Input should not be null");
+            throw new NullInputException("Input should not be null");
         }
         AggregateLifecycle.apply(new LeaveUpdatedEvent(
                 updateLeaveCommand.getId(),

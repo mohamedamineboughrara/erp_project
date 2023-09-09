@@ -32,16 +32,10 @@ public class TacheQuerryController {
     private ProjectRepository projectRepository;
     @GetMapping()
     public List<Tache> tacheList(){
-        List<Tache> response = queryGateway.query((new GetAllTacheQuery()), ResponseTypes.multipleInstancesOf(Tache.class)).join();
-        return response;
-    };
 
- /*   @GetMapping("/{id}")
-    public Tache tacheById(@PathVariable String id){
-        var getbyid = new GetById(id);
-        Tache response = queryGateway.query(getbyid, ResponseTypes.instanceOf(Tache.class)).join();
-        return response;
-    };*/
+        return queryGateway.query((new GetAllTacheQuery()), ResponseTypes.multipleInstancesOf(Tache.class)).join();
+    }
+
 
 
 
@@ -51,8 +45,8 @@ public class TacheQuerryController {
         if (projectOptional.isPresent()) {
             Project project = projectOptional.get();
             GetTacheByProject query = new GetTacheByProject(project, status);
-            List<Tache> response = queryGateway.query(query, ResponseTypes.multipleInstancesOf(Tache.class)).join();
-            return response;
+
+            return queryGateway.query(query, ResponseTypes.multipleInstancesOf(Tache.class)).join();
         } else {
             throw new EntityNotFoundException("Project not found with id: " + projectId);
         }

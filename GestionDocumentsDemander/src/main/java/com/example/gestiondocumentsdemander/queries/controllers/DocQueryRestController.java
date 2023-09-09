@@ -24,13 +24,13 @@ public class DocQueryRestController {
     }
     @GetMapping(path="/AllDocuments")
     public List<DocDemander> getAll(){
-        List<DocDemander> reponse=queryGateway.query(new GetAllDocQueryDTO(), ResponseTypes.multipleInstancesOf(DocDemander.class)).join();
-        return reponse;
+        return queryGateway.query(new GetAllDocQueryDTO(), ResponseTypes.multipleInstancesOf(DocDemander.class)).join();
+
     }
     @GetMapping(path="/AllDocumentByStatus")
     public List<DocDemander> getAllByStatus(){
-        List<DocDemander> reponse=queryGateway.query(new GetAllDocByStatusQueryDTO(), ResponseTypes.multipleInstancesOf(DocDemander.class)).join();
-        return reponse;
+
+        return queryGateway.query(new GetAllDocByStatusQueryDTO(), ResponseTypes.multipleInstancesOf(DocDemander.class)).join();
     }
 
 }

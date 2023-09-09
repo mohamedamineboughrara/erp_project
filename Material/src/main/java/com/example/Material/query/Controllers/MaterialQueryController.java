@@ -25,7 +25,7 @@ public class MaterialQueryController {
     @GetMapping("/{collaborators}")
     public List<AssignedMaterial> materialByCollab(@PathVariable String collaborator) {
         var getAllAssignedForCollab = new GetAllAssignedForCollab(collaborator);
-        List<AssignedMaterial> response = queryGateway.query(getAllAssignedForCollab, ResponseTypes.multipleInstancesOf(AssignedMaterial.class)).join();
-        return response;
+
+        return queryGateway.query(getAllAssignedForCollab, ResponseTypes.multipleInstancesOf(AssignedMaterial.class)).join();
     }
 }

@@ -5,7 +5,7 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 public class BaseCommand<T> {
     @TargetAggregateIdentifier
-    @Getter private T id;
+    @Getter private final T id;
     public BaseCommand(T id) {
         this.id = id;
     }

@@ -9,16 +9,16 @@ import java.util.Date;
 public class FicheDePaieUpdatedEvent extends BaseEvent<String>{
 
 
-    @Getter private String userName;
-    @Getter private Date date;
-    @Getter private Double salaireBrut;
-    @Getter  private Double impots;
-    @Getter  private String idCollaborator;
-    @Getter  private Double salaireNet;
-    @Getter  private Double chargeSociale;
-    @Getter  private Double prime;
-    @Getter  private Double tjm;
-    @Getter  private FicheDePaieStatus status;
+    @Getter private final String userName;
+    @Getter private final Date date;
+    @Getter private final Double salaireBrut;
+    @Getter  private final Double impots;
+    @Getter  private final String idCollaborator;
+    @Getter  private final Double salaireNet;
+    @Getter  private final Double chargeSociale;
+    @Getter  private final Double prime;
+    @Getter  private final Double tjm;
+    @Getter  private final FicheDePaieStatus status;
 
     public FicheDePaieUpdatedEvent(String id, String userName, Date date, Double salaireBrut, Double impots, String idCollaborator, Double salaireNet, Double chargeSociale, Double prime, Double tjm, FicheDePaieStatus status) {
         super(id);

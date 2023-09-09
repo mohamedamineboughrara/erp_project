@@ -16,7 +16,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 public class BranchAggregate {
     @AggregateIdentifier
     public String branchID;
-    public String branchTitle;
+    public String  branchTitle;
     public String branchDescription;
 
     public String userId;

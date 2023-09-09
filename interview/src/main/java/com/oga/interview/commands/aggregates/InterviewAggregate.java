@@ -5,6 +5,7 @@ import com.oga.interview.commands.commands.UpdateInterviewCommand;
 import com.oga.interview.enums.InterviewStatus;
 import com.oga.interview.events.InterviewCreatedEvent;
 import com.oga.interview.events.InterviewUpdatedEvent;
+import com.oga.interview.exceptions.NullInputException;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -66,7 +67,7 @@ public class InterviewAggregate {
     @CommandHandler
     public void on(UpdateInterviewCommand updateInterviewCommand) {
         if ((updateInterviewCommand.getCandidateId()==null) || (updateInterviewCommand.getCandidateName()==null) || (updateInterviewCommand.getEmailAddress()==null)){
-            throw new RuntimeException("Input should not be null");
+            throw new NullInputException("Input should not be null");
         }
         AggregateLifecycle.apply(new InterviewUpdatedEvent(
                 updateInterviewCommand.getId(),

@@ -7,15 +7,14 @@ import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 @Service
 public class GestionBdjCommandServiceImpl implements GestionBdjCommandService {
 @Autowired
-    private CommandGateway commandGateway;
+private CommandGateway commandGateway;
 
     @Override
     public CompletableFuture<String> createGBdj(GestionBdgDTO gestionBdgDTO) {

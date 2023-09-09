@@ -1,7 +1,7 @@
 package org.oga.gestioncras.commands.commonapi;
 
 import lombok.Getter;
-import org.oga.gestioncras.enums.CRAsStatus;
+
 
 import java.time.LocalDate;
 

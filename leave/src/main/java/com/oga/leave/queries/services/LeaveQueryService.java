@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @Service
 public class LeaveQueryService {
     private final LeaveRepository leaveRepository;
+
     private final LeaveMapper leaveMapper;
     private final QueryUpdateEmitter queryUpdateEmitter;
     public LeaveQueryService(LeaveRepository leaveRepository, LeaveMapper leaveMapper, QueryUpdateEmitter queryUpdateEmitter) {

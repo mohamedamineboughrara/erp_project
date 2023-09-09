@@ -17,11 +17,11 @@ public class CrasConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(CrasConsumer.class);
     @KafkaListener(topics = "Cras_topic",groupId = "${spring.kafka.consumer.group-id}")
     public void consume(CRAsCreatedEvent event){
-        LOGGER.info(event.getIdCollaborator().toString());
+        LOGGER.info(event.getIdCollaborator());
         Notifications notifications = new Notifications();
         notifications.setMessage("new Cras  is in created ");
-        notifications.setCollaborator(event.getIdCollaborator().toString());
-        notifications.setResponsible(event.getIdResponsible().toString());
+        notifications.setCollaborator(event.getIdCollaborator());
+        notifications.setResponsible(event.getIdResponsible());
         notificationRepository.save(notifications);
 
     }

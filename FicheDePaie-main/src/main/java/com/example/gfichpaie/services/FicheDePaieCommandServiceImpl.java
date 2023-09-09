@@ -3,13 +3,12 @@ package com.example.gfichpaie.services;
 import com.example.gfichpaie.commonapi.CreateFichedePaieCommand;
 import com.example.gfichpaie.commonapi.UpdateFicheDePaieCommand;
 import com.example.gfichpaie.dtos.FicheDePaieRequestDTO;
-import lombok.Getter;
+import com.example.gfichpaie.exceptions.NullInputException;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -50,7 +49,7 @@ public class FicheDePaieCommandServiceImpl implements FicheDePaieCommandService 
             ficheDePaieRequestDTO.getTjm()));
 
         return commandResponse.exceptionally(ex -> {
-            throw new RuntimeException("Failed to update FdP: " + ex.getMessage());
+            throw new NullInputException("Failed to update FdP: " + ex.getMessage());
         });
 
     }

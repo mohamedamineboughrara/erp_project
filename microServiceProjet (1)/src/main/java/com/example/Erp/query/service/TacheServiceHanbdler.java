@@ -121,7 +121,6 @@ private TaskProducer taskProducer;
             Optional<Project> projectOptional = projectRepository.findById(event.getProject());
             if (projectOptional.isPresent()) {
                 Project project = projectOptional.get();
-                //log.info("project: {}", project);
                 tache.setProject(project);
             } else {
                 log.warn("Project not found for id: {}", event.getProject());
@@ -179,7 +178,6 @@ private TaskProducer taskProducer;
             Optional<Project> projectOptional = projectRepository.findById(event.getProject());
             if (projectOptional.isPresent()) {
                 Project project = projectOptional.get();
-                //log.info("project: {}", project);
                 tache.setProject(project);
             } else {
                 log.warn("Project not found for id: {}", event.getProject());

@@ -2,7 +2,6 @@ package com.example.Erp.query.Controller;
 
 import com.example.Erp.commonApi.queries.ModuleQueries.GetAllModuleQuery;
 import com.example.Erp.commonApi.queries.ModuleQueries.GetByProject;
-import com.example.Erp.commonApi.queries.ProjectQueries.GetById;
 import com.example.Erp.query.entities.Module;
 import com.example.Erp.query.entities.Project;
 import com.example.Erp.query.repositories.ProjectRepository;
@@ -29,25 +28,20 @@ public class ModuleQuerryController {
 
     @GetMapping()
     public List<Module> moduleList(){
-        List<Module> response = queryGateway.query((new GetAllModuleQuery()), ResponseTypes.multipleInstancesOf(Module.class)).join();
-        return response;
-    };
+        return queryGateway.query((new GetAllModuleQuery()), ResponseTypes.multipleInstancesOf(Module.class)).join();
 
-   /* @GetMapping("/{id}")
-    public Module modulebyId(@PathVariable String id){
-        var getbyid = new GetById(id);
-        Module response = queryGateway.query(getbyid, ResponseTypes.instanceOf(Module.class)).join();
-        return response;
-    };*/
+    }
+
+
 
     @GetMapping("/{projectId}")
-    public List<Module> ModuleByProject(@PathVariable String projectId) {
+    public List<Module> moduleByProject(@PathVariable String projectId) {
         Optional<Project> projectOptional = projectRepository.findById(projectId);
         if (projectOptional.isPresent()) {
             Project project = projectOptional.get();
             GetByProject query = new GetByProject(project);
-            List<Module> response = queryGateway.query(query, ResponseTypes.multipleInstancesOf(Module.class)).join();
-            return response;
+
+            return queryGateway.query(query, ResponseTypes.multipleInstancesOf(Module.class)).join();
         } else {
             throw new EntityNotFoundException("Project not found with id: " + projectId);
         }

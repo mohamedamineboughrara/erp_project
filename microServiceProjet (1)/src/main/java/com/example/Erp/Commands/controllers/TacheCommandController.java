@@ -1,16 +1,12 @@
 package com.example.Erp.Commands.controllers;
 import com.example.Erp.Exception.MissingInputException;
-import com.example.Erp.commonApi.ProducerKafka.TaskProducer;
 import com.example.Erp.commonApi.commands.TacheCommand.*;
 import com.example.Erp.commonApi.dtos.TacheRequestDTO;
-import com.example.Erp.commonApi.event.TacheEvent.TacheTestedEvent;
 import lombok.AllArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -74,7 +70,7 @@ public class TacheCommandController {
 
     }
     @PutMapping(path = "/Progress")
-    public CompletableFuture<String> Started( @RequestBody TacheRequestDTO requestDTO)
+    public CompletableFuture<String> started( @RequestBody TacheRequestDTO requestDTO)
     { CompletableFuture<String> commandResponse = commandGateway.send(new StartedTacheCommand(
             requestDTO.getTacheId(),
             requestDTO.getTacheTitle(),
@@ -92,7 +88,7 @@ public class TacheCommandController {
 
     }
     @PutMapping(path = "/test")
-    public CompletableFuture<String> Tested( @RequestBody TacheRequestDTO requestDTO)
+    public CompletableFuture<String> tested(@RequestBody TacheRequestDTO requestDTO)
     { CompletableFuture<String> commandResponse = commandGateway.send(new TesteTacheCommand(
             requestDTO.getTacheId(),
 
@@ -112,7 +108,7 @@ public class TacheCommandController {
 
     }
     @PutMapping(path = "/Complete")
-    public CompletableFuture<String> Complete( @RequestBody TacheRequestDTO requestDTO)
+    public CompletableFuture<String> complete(@RequestBody TacheRequestDTO requestDTO)
     { CompletableFuture<String> commandResponse = commandGateway.send(new CompleteTacheCommand(
             requestDTO.getTacheId(),
             requestDTO.getTacheTitle(),

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Aoi-gateway/Aoi-gateway.iml" filepath="$PROJECT_DIR$/Aoi-gateway/Aoi-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/GestionBdg/GestionBdg.iml" filepath="$PROJECT_DIR$/GestionBdg/GestionBdg.iml" />
       <module fileurl="file://$PROJECT_DIR$/GestionCRAsBack-master/GestionCRAs.iml" filepath="$PROJECT_DIR$/GestionCRAsBack-master/GestionCRAs.iml" />
       <module fileurl="file://$PROJECT_DIR$/GestionCollaborator/GestionCollaborator.iml" filepath="$PROJECT_DIR$/GestionCollaborator/GestionCollaborator.iml" />
       <module fileurl="file://$PROJECT_DIR$/GestionDocumentsDemander/GestionDocumentsDemander.iml" filepath="$PROJECT_DIR$/GestionDocumentsDemander/GestionDocumentsDemander.iml" />
       <module fileurl="file://$PROJECT_DIR$/FicheDePaie-main/GfichPaie.iml" filepath="$PROJECT_DIR$/FicheDePaie-main/GfichPaie.iml" />
       <module fileurl="file://$PROJECT_DIR$/Material/Material.iml" filepath="$PROJECT_DIR$/Material/Material.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aoi-gateway/aoi-gateway.iml" filepath="$PROJECT_DIR$/Aoi-gateway/aoi-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/erp_project.iml" filepath="$PROJECT_DIR$/.idea/erp_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/interview/interview.iml" filepath="$PROJECT_DIR$/interview/interview.iml" />
       <module fileurl="file://$PROJECT_DIR$/leave/leave.iml" filepath="$PROJECT_DIR$/leave/leave.iml" />

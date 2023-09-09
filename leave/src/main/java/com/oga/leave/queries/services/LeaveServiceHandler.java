@@ -1,6 +1,5 @@
 package com.oga.leave.queries.services;
 
-import com.oga.leave.enums.LeaveStatus;
 import com.oga.leave.events.LeaveApprovedEvent;
 import com.oga.leave.events.LeaveCreatedEvent;
 import com.oga.leave.events.LeaveRejectedEvent;
@@ -16,11 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 @Service
@@ -34,10 +32,9 @@ public class LeaveServiceHandler {
     @Autowired
     private RejectedLeaveProducer rejectedLeaveProducer;
     private LeaveRepository leaveRepository;
-    private KafkaTemplate kafkaTemplate;
     @EventHandler
     public void on(LeaveCreatedEvent leaveCreatedEvent){
-        log.info("*****");
+
         log.info("leaveCreatedEventReceived");
         Leave leave = new Leave();
         leave.setLeaveId(leaveCreatedEvent.getId());
@@ -58,7 +55,7 @@ public class LeaveServiceHandler {
 
     @EventHandler
     public void on(LeaveUpdatedEvent leaveUpdatedEvent){
-        log.info("*****");
+
         log.info("leaveUpdatedEventReceived");
         Leave leave = leaveRepository.findById(leaveUpdatedEvent.getId()).orElseThrow(()-> new IllegalArgumentException("Invalid Leave Id"));
         leave.setCollaboraterId(leaveUpdatedEvent.getCollaboraterId());

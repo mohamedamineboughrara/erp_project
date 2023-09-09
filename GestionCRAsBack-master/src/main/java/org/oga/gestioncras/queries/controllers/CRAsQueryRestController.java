@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path="/query")
 public class CRAsQueryRestController {
-    private QueryGateway queryGateway;
+    private final QueryGateway queryGateway;
 
     public CRAsQueryRestController(QueryGateway queryGateway) {
         this.queryGateway = queryGateway;
@@ -24,12 +24,11 @@ public class CRAsQueryRestController {
     }
     @GetMapping(path="/AllCRAs")
     public List<CRAs> getAll(){
-        List<CRAs> reponse=queryGateway.query(new GetAllCRAsQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
-        return reponse;
+        return queryGateway.query(new GetAllCRAsQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
+
     }
     @GetMapping(path="/AllCRAsByStatus")
     public List<CRAs> getAllByStatus(){
-        List<CRAs> reponse=queryGateway.query(new GetAllCRAsByStatusQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
-        return reponse;
+        return queryGateway.query(new GetAllCRAsByStatusQueryDTO(), ResponseTypes.multipleInstancesOf(CRAs.class)).join();
     }
 }

@@ -5,20 +5,16 @@ import com.oga.leave.queries.dtos.LeaveResponseDTO;
 import com.oga.leave.queries.entities.Leave;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
-import org.axonframework.queryhandling.SubscriptionQueryResult;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
 
-import javax.print.attribute.standard.Media;
-import java.awt.*;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping(path = "/query")
 public class LeaveQueryRestController {
-    private QueryGateway queryGateway;
+    private final QueryGateway queryGateway;
     public LeaveQueryRestController(QueryGateway queryGateway) {
         this.queryGateway = queryGateway;
 
@@ -32,18 +28,9 @@ public class LeaveQueryRestController {
     }
     @GetMapping()
     public List<Leave> leaveList(){
-        List<Leave> response = queryGateway.query((new GetLeaveQuery()), ResponseTypes.multipleInstancesOf(Leave.class)).join();
-        return response;
+        return queryGateway.query((new GetLeaveQuery()), ResponseTypes.multipleInstancesOf(Leave.class)).join();
+
     }
-   /* @GetMapping(value = "/{leaveId}/watch",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<LeaveResponseDTO> watch(@PathVariable String leaveId){
-        SubscriptionQueryResult<LeaveResponseDTO,LeaveResponseDTO> result=
-                queryGateway.subscriptionQuery(
-                        new GetLeaveQueryDTO(leaveId),
-                        ResponseTypes.instanceOf(LeaveResponseDTO.class),
-                        ResponseTypes.instanceOf(LeaveResponseDTO.class)
-                );
-        return result.initialResult().concatWith(result.updates());
-    }*/
+
 
 }

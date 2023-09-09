@@ -2,10 +2,8 @@ package com.example.gestiondocumentsdemander.commands.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.io.File;
 import java.time.LocalDate;
 @Data @AllArgsConstructor @NoArgsConstructor
 public class DocRequestDTO {

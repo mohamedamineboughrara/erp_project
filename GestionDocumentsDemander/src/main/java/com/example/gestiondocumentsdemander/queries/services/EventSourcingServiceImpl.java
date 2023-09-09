@@ -13,7 +13,7 @@ public class EventSourcingServiceImpl implements EventSourcingService {
     }
     @Override
     public DomainEventStream eventsByDocId(String docId){
-        DomainEventStream domainEventStream=eventStore.readEvents(docId);
-        return domainEventStream;
+        return eventStore.readEvents(docId);
+
     }
 }

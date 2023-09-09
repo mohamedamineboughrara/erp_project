@@ -5,6 +5,7 @@ import com.example.gestionbdg.commonapi.UpdateCjmCommand;
 import com.example.gestionbdg.enums.GbdgStatus;
 import com.example.gestionbdg.events.CjmCreatedEvent;
 import com.example.gestionbdg.events.CjmUpdatedEvent;
+import com.example.gestionbdg.exceptions.NullInputException;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -12,15 +13,13 @@ import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 
-import java.util.List;
-
 
 @Aggregate
 @Slf4j
 public class GestionBdj {
     @AggregateIdentifier
     private String bdgId;
-    private String collaborator;
+    private  String collaborator;
     private Double tjm;
     private Double cjm;
     private String task;
@@ -34,7 +33,7 @@ public class GestionBdj {
     @CommandHandler
     public GestionBdj(CreateCjmCommand createCjmCommand) {
         if((createCjmCommand.getCjm()==null) || (createCjmCommand.getCollaborator()==null) ){
-            throw new RuntimeException("Input should not be null");
+            throw new NullInputException("Input should not be null");
         }
         log.info("CreateFDPCommand Reveived");
 
@@ -63,9 +62,9 @@ public class GestionBdj {
             this.status=event.getStatus();
         }
         @CommandHandler
-        public void FicheDePaieAggregate(UpdateCjmCommand command){
+        public void ficheDePaieAggregate(UpdateCjmCommand command){
             if((command.getCollaborator()==null)  ){
-                throw new RuntimeException("Input should not be null");
+                throw new NullInputException("Input should not be null");
             }
         AggregateLifecycle.apply(new CjmUpdatedEvent(
                 command.getBdgId(),

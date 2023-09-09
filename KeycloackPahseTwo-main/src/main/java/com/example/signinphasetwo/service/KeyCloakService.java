@@ -20,7 +20,6 @@ KeycklockConfig keycklockConfig;
 
         OrganizationRepresentation organizationRepresentation = new OrganizationRepresentation().name(orgEntity.getName());
 
-        //organizationRepresentation.setName(orgDTO.getName());
 
         OrganizationsResource orgs = phaseTwo.organizations(keycklockConfig.getREALM());
 

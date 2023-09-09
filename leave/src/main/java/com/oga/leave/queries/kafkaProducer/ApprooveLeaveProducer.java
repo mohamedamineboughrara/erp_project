@@ -1,7 +1,6 @@
 package com.oga.leave.queries.kafkaProducer;
 
 import com.oga.leave.events.LeaveApprovedEvent;
-import com.oga.leave.events.LeaveCreatedEvent;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

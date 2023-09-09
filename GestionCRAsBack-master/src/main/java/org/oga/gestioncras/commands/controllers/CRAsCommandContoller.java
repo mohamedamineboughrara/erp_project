@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 @RestController
 @RequestMapping(path="/commands/CRAs")
 public class CRAsCommandContoller {
-    private CRAsCommandService crAsCommandService;
-    private EventStore eventStore;
+    private final CRAsCommandService crAsCommandService;
+    private final EventStore eventStore;
 
     public CRAsCommandContoller(CRAsCommandService crAsCommandService, EventStore eventStore) {
         this.crAsCommandService = crAsCommandService;
@@ -27,7 +27,7 @@ public class CRAsCommandContoller {
         return crAsCommandService.createCRAs(crAsRequestDTO);
     }
     @PutMapping(path = "/update")
-    public CompletableFuture<String> UpdateCRAs(@RequestBody CRAsRequestDTO request){
+    public CompletableFuture<String> updateCRAs(@RequestBody CRAsRequestDTO request){
         return crAsCommandService.updateCRAs(request);
     }
     @DeleteMapping(path = "/delete/{craId}")

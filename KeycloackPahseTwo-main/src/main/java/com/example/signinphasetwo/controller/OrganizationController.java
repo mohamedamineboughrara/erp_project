@@ -39,23 +39,5 @@ UserService use ;
        return new ResponseEntity<>(keycl.gettOrg(),HttpStatus.OK);
     }
 
-    /*
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Void> updateOrganization(@PathVariable("id") String id, @RequestBody OrganizationRepresentation organization) {
-        phaseTwo.organizations(keycloak.getRealm()).organization(id).update(organization);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrganization(@PathVariable("id") String id) {
-        phaseTwo.organizations(keycloak.getRealm()).organization(id).delete();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<OrganizationRepresentation>> getAllOrganizations() {
-        List<OrganizationRepresentation> organizations = phaseTwo.organizations(keycloak.getRealm()).get();
-        return new ResponseEntity<>(organizations, HttpStatus.OK);
-    }*/
 }

@@ -10,11 +10,9 @@ import org.oga.gestioncras.commands.commonapi.*;
 import org.oga.gestioncras.enums.CRAsStatus;
 import org.oga.gestioncras.events.*;
 import lombok.extern.slf4j.Slf4j;
-import org.oga.gestioncras.queries.entities.CRAs;
-import org.oga.gestioncras.queries.repositories.CRAsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.oga.gestioncras.exceptions.NullInputException;
+
 import java.time.LocalDate;
-import java.util.List;
 
 @Aggregate
 @Slf4j
@@ -42,7 +40,7 @@ public CRAsAggregate() {
     @CommandHandler
     public CRAsAggregate(CreateCRAsCommand createCRAsCommand) {
         if((createCRAsCommand.getDescription()==null) || (createCRAsCommand.getStartDate()==null) || (createCRAsCommand.getEndDate()==null) || (createCRAsCommand.getIdProject()==null)){
-            throw new RuntimeException("Input should not be null");
+            throw new NullInputException("Input should not be null");
         }
         if (createCRAsCommand.getEndDate().isBefore(createCRAsCommand.getStartDate())) {
             throw new IllegalArgumentException("The end date cannot be earlier than the start date");
@@ -83,9 +81,9 @@ public CRAsAggregate() {
             this.status=event.getStatus();
         }
         @CommandHandler
-        public void CRAsAggregate(UpdateCRAsCommand command){
+        public CRAsAggregate(UpdateCRAsCommand command){
             if((command.getDescription()==null) || (command.getStartDate()==null) || (command.getEndDate()==null)  || (command.getIdProject()==null)){
-                throw new RuntimeException("Input should not be null");
+                throw new NullInputException("Input should not be null");
             }
             if (command.getEndDate().isBefore(command.getStartDate())) {
                 throw new IllegalArgumentException("The end date cannot be earlier than the start date");

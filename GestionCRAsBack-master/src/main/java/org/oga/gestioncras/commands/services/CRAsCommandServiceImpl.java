@@ -1,15 +1,13 @@
 package org.oga.gestioncras.commands.services;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
-import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.oga.gestioncras.commands.commonapi.*;
 import org.oga.gestioncras.commands.dtos.CRAsRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.oga.gestioncras.commands.commonapi.CreateCRAsCommand;
 
-import java.time.Duration;
-import java.time.ZoneId;
+
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class CRAsCommandServiceImpl implements CRAsCommandService {
 @Autowired
     private CommandGateway commandGateway;
-    private CreateCRAsCommand command;
+
     @Override
     public CompletableFuture<String> createCRAs(CRAsRequestDTO crAsRequestDTO) {
         if (crAsRequestDTO.getStartDate() != null && crAsRequestDTO.getEndDate() != null) {

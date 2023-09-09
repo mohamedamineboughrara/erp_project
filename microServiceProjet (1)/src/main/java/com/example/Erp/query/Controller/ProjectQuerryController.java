@@ -29,16 +29,16 @@ public class ProjectQuerryController {
 
     @GetMapping()
     public List<Project> projectList() {
-        List<Project> response = queryGateway.query((new GetAllProjectQuery()), ResponseTypes.multipleInstancesOf(Project.class)).join();
-        return response;
+        return queryGateway.query((new GetAllProjectQuery()), ResponseTypes.multipleInstancesOf(Project.class)).join();
+
     }
 
-    ;
+
 
     @GetMapping("/{collaborators}")
     public List<Project> projectbyId(@PathVariable String collaborators) {
         var getbyid = new GetById(collaborators);
-        List<Project> response = queryGateway.query(getbyid, ResponseTypes.multipleInstancesOf(Project.class)).join();
-        return response;
+
+        return queryGateway.query(getbyid, ResponseTypes.multipleInstancesOf(Project.class)).join();
     }
 }

@@ -1,6 +1,5 @@
 package com.example.gfichpaie.commonapi;
 import lombok.Getter;
-import java.time.LocalDate;
 import java.util.Date;
 public class CreateFichedePaieCommand extends BaseCommand<String> {
     @Getter private String userName;
