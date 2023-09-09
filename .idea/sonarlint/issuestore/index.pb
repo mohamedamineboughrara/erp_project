@@ -61,7 +61,5 @@ VrendezVous/src/main/java/com/oga/rendezvous/queries/services/EventSourcingServi
 XrendezVous/src/main/java/com/oga/rendezvous/queries/controllers/GetAppointmentQuery.java,1/c/1cac2b7f92e6e89fdc6da0d4949772565c70b405
 F
 Aoi-gateway/Dockerfile,5/3/5353c45b8898f50803d86316f1e38315152f22f2
-;
-Jenkinsfile,0/c/0c2c5c506cef0ed2d3ad2b7e45e97980b66f5520
 F
 Aoi-gateway/.gitignore,b/c/bc97132634ea97398f29de8f9414ebac6af3b9c2

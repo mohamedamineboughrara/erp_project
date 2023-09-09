@@ -17,6 +17,7 @@ pipeline {
                                                     sh 'mvn sonar:sonar   -Dsonar.projectKey=Api-gateway -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ed2e81b29f1b3f6ff5320459e72ab510fb107c1a '
                                                     sh 'docker build -t mohamedamineboughrara/aoi-gateway-1.0.0.jar .'
                                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                    sh 'docker push mohamedamineboughrara/aoi-gateway-1.0.0.jar'
                                                     sh 'mvn org.owasp:dependency-check-maven:check'
                                                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -32,6 +33,7 @@ pipeline {
                                                     sh 'mvn test'
                                                     sh 'docker build -t mohamedamineboughrara/material-1.0.0.jar .'
                                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                    sh 'docker push mohamedamineboughrara/material-1.0.0.jar '
                                                     sh 'mvn org.owasp:dependency-check-maven:check'
                                                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -46,6 +48,7 @@ pipeline {
                                                                                         sh 'mvn test'
                                                                                         sh 'docker build -t mohamedamineboughrara/gestiondocumentsdemander-1.0.0.jar .'
                                                                                         sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                                                        sh 'docker push mohamedamineboughrara/gestiondocumentsdemander-1.0.0.jar'
                                                                                         sh 'mvn org.owasp:dependency-check-maven:check'
                                                                                         archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -60,6 +63,7 @@ pipeline {
                                                                                     sh 'mvn test'
                                                                                     sh 'docker build -t mohamedamineboughrara/interview-1.0.0.jar .'
                                                                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                                                    sh 'docker push mohamedamineboughrara/interview-1.0.0.jar'
                                                                                     sh 'mvn org.owasp:dependency-check-maven:check'
                                                                                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -74,6 +78,8 @@ pipeline {
                                             sh 'mvn test'
                                             sh 'docker build -t mohamedamineboughrara/gestioncras-1.0.0.jar .'
                                             sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                            sh 'docker push mohamedamineboughrara/gestioncras-1.0.0.jar'
+
                                             sh 'mvn org.owasp:dependency-check-maven:check'
                                             archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -89,6 +95,7 @@ pipeline {
                                     sh 'mvn test'
                                     sh 'docker build -t mohamedamineboughrara/gestionbdg-1.0.0.jar .'
                                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                    sh 'docker push mohamedamineboughrara/gestionbdg-1.0.0.jar '
                                     sh 'mvn org.owasp:dependency-check-maven:check'
                                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -104,6 +111,7 @@ pipeline {
                     sh 'mvn test'
                     sh 'docker build -t mohamedamineboughrara/leave .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                    sh 'docker push mohamedamineboughrara/leave '
                     sh 'mvn org.owasp:dependency-check-maven:check'
                     archiveArtifacts(artifacts: 'target/dependency-check-report.html', fingerprint: true)
 
@@ -118,6 +126,7 @@ pipeline {
                     sh 'mvn test'
                     sh 'docker build -t mohamedamineboughrara/micrpserviceprojet .'
                     sh 'docker login -u mohamedamineboughrara -p azerty123'
+                    sh 'docker push mohamedamineboughrara/micrpserviceprojet'
                     sh 'mvn org.owasp:dependency-check-maven:check'
 
                 }
